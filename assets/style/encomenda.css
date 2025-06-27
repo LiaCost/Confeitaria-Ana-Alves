@@ -1,0 +1,415 @@
+
+               * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #8C5660;
+            --secondary: #D9B0B7;
+            --accent: #fabfbf;
+            --light-pink: #ef9d9d;
+            --white: #ffffff;
+            --dark-primary: #312e2f;
+            --dark-secondary: #261417;
+            --brown: #664B44;
+            --beige: #CFAF90;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            background:#D9B0B7;
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+            padding-top: 120px; /* Adiciona espaço para o header fixo */
+        }
+
+        .titulo {         
+            color: #261417;
+            padding: 40px 20px;
+            text-align: center;
+            position: relative;
+            width: 100%;
+            margin-top: 20px; /* Adiciona margem superior para descer mais */
+        }
+
+        .titulo::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 0%, rgba(250, 191, 191, 0.15) 50%, transparent 100%);
+        }
+
+        .titulo h1 {
+            font-size: 3em;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 1;
+        }
+
+        .titulo p {
+            font-size: 1.2em;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-container {
+            padding: 40px 20px;
+            background: #D9B0B7;
+            min-height: calc(100vh - 200px);
+        }
+
+        .content-wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-section {
+            margin-bottom: 40px;
+            border-radius: 20px;
+            padding: 30px;
+            background: var(--white);
+            transition: all 0.3s ease;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .product-section:hover {
+            box-shadow: 0 8px 25px rgba(140, 86, 96, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .product-title {
+            color: var(--dark-primary);
+            font-size: 1.6em;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: bold;
+            background: linear-gradient(45deg, var(--primary), var(--dark-primary), var(--primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .product-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        .option-group {
+            margin-bottom: 25px;
+        }
+
+        .option-label {
+            display: block;
+            color: var(--dark-primary);
+            font-weight: bold;
+            margin-bottom: 10px;
+            font-size: 1.1em;
+        }
+
+        select, input[type="number"], input[type="text"], input[type="email"], input[type="tel"], input[type="date"], input[type="time"], textarea {
+            width: 100%;
+            padding: 18px;
+            border: 2px solid var(--secondary);
+            border-radius: 12px;
+            font-size: 1.1em;
+            background: var(--white);
+            transition: all 0.3s ease;
+            color: var(--dark-primary);
+        }
+
+        select:focus, input[type="number"]:focus, input[type="text"]:focus, input[type="email"]:focus, input[type="tel"]:focus, input[type="date"]:focus, input[type="time"]:focus, textarea:focus {
+            outline: none;
+            border: 2px solid var(--primary);
+            box-shadow: 0 0 20px rgba(140, 86, 96, 0.25);
+            background: var(--white);
+            transform: translateY(-1px);
+        }
+
+        select:hover, input:hover, textarea:hover {
+            border-color: var(--primary);
+        }
+
+        input:required:invalid {
+            border-color: var(--light-pink);
+        }
+
+        input:required:valid {
+            border-color: var(--primary);
+            background: rgba(140, 86, 96, 0.05);
+        }
+
+        .quantity-input {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .quantity-input input {
+            width: 120px;
+            text-align: center;
+        }
+
+        .whatsapp-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark-primary) 100%);
+            padding: 40px;
+            text-align: center;
+            margin-top: 40px;
+            border-radius: 20px;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(140, 86, 96, 0.3);
+        }
+
+        .whatsapp-section h3 {
+            color: var(--accent) !important;
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+
+        .whatsapp-section p {
+            color: rgba(255, 255, 255, 0.9) !important;
+            font-size: 1.1em;
+            margin-bottom: 25px;
+        }
+
+        .whatsapp-btn {
+            background: linear-gradient(45deg, #25D366, #128C7E);
+            color: white;
+            padding: 20px 40px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.3em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+        }
+
+        .whatsapp-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(37, 211, 102, 0.4);
+            background: linear-gradient(45deg, #128C7E, #25D366);
+        }
+
+        .details-section {
+            margin-top: 40px;
+            padding: 30px;
+            background: var(--white);
+            border-radius: 20px;
+            position: relative;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .details-section:hover {
+            box-shadow: 0 8px 25px rgba(140, 86, 96, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .details-section h3 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            text-align: center;
+            background: linear-gradient(45deg, var(--primary), var(--dark-primary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            position: relative;
+        }
+
+        .details-section h3::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(45deg, var(--primary), var(--accent));
+            border-radius: 2px;
+        }
+
+        textarea {
+            min-height: 140px;
+            resize: vertical;
+            font-family: inherit;
+            background: var(--white);
+        }
+
+        /* Seção de dados do cliente com design especial - ÚNICA COM BORDA COLORIDA */
+        .client-section {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark-primary) 100%) !important;
+            color: var(--white);
+            box-shadow: 0 10px 30px rgba(140, 86, 96, 0.2);
+            border: 3px solid transparent;
+            background-clip: padding-box;
+        }
+
+        .client-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 20px;
+            padding: 3px;
+            background: linear-gradient(45deg, var(--accent), var(--white), var(--accent));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            mask-composite: xor;
+            -webkit-mask-composite: xor;
+            z-index: -1;
+        }
+
+        .client-section:hover::before {
+            background: linear-gradient(45deg, var(--accent), var(--white), var(--accent));
+        }
+
+        .client-section .product-title {
+            color: var(--accent) !important;
+            background: linear-gradient(45deg, var(--accent), var(--white)) !important;
+            -webkit-background-clip: text !important;
+            -webkit-text-fill-color: transparent !important;
+            background-clip: text !important;
+        }
+
+        .client-section .product-title::after {
+            background: linear-gradient(45deg, var(--accent), var(--white)) !important;
+        }
+
+        .client-section .option-label {
+            color: var(--accent) !important;
+        }
+
+        .client-section input {
+            background: rgba(255, 255, 255, 0.95);
+            border-color: var(--secondary);
+        }
+
+        .client-section input:focus {
+            background: var(--white);
+            border-color: var(--accent);
+            box-shadow: 0 0 20px rgba(250, 191, 191, 0.4);
+        }
+
+        /* Grid responsivo para campos do cliente */
+        .client-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* Grid para data e hora de entrega */
+        .delivery-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 25px;
+        }
+
+        /* Estilo especial para campos de data e hora */
+        input[type="date"], input[type="time"] {
+            font-family: inherit;
+            color: var(--dark-primary);
+        }
+
+        /* Destaque visual para a seção de entrega */
+        .delivery-highlight {
+            background: rgba(250, 191, 191, 0.1);
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border: 2px dashed rgba(250, 191, 191, 0.3);
+        }
+
+        .delivery-info {
+            font-size: 0.95em;
+            color: rgba(255, 255, 255, 0.8);
+            margin-top: 10px;
+            font-family: 'Times New Roman', Times, serif;
+            font-style: italic;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding-top: 100px; /* Ajuste para mobile */
+            }
+            
+            .titulo {
+                margin-top: 10px;
+                padding: 30px 15px;
+            }
+            
+            .titulo h1 {
+                font-size: 2.2em;
+            }
+            
+            .form-container {
+                padding: 30px 15px;
+            }
+            
+            .product-section {
+                padding: 20px;
+            }
+            
+            .quantity-input {
+                flex-direction: column;
+                align-items: stretch;
+            }
+
+            .quantity-input input {
+                width: 100%;
+            }
+
+            .client-grid, .delivery-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .whatsapp-btn {
+                padding: 18px 30px;
+                font-size: 1.1em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                padding-top: 90px; /* Ajuste ainda menor para telas muito pequenas */
+            }
+            
+            .titulo h1 {
+                font-size: 1.8em;
+            }
+            
+            .titulo p {
+                font-size: 1em;
+            }
+            
+            .product-title {
+                font-size: 1.3em;
+            }
+        }
+    
+    

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfil do Usuário</title>
+
+     <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Logo/Logo-Black.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style/perfil-usuario.css">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+</head>
+<body>
+     <button class="back-button" onclick="goBack()" title="Voltar à tela inicial">
+        <a href="index.html"><span class="back-arrow">←</span></a>       
+    </button>
+    <div class="floating-shapes">
+        <div class="shape"></div>
+        <div class="shape"></div>
+        <div class="shape"></div>
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <div class="edit-indicator">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="m18.5 2.5 3 3L12 15l-4 1 1-4Z"></path></svg>
+            Clique para editar
+        </div>
+            <div class="profile-header">
+                <div class="avatar-container">
+                    <div class="avatar" id="avatar">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                    </div>
+                    <button class="edit-avatar" onclick="document.getElementById('file-input').click();">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="m18.5 2.5 3 3L12 15l-4 1 1-4Z"></path></svg>
+                    </button>
+                    <input type="file" id="file-input" accept="image/*" style="display: none;" onchange="loadImage(event)">
+                </div>
+
+                <div class="user-info">
+                    <h1 id="header-nome" contenteditable="true" data-placeholder="Seu nome">João Silva</h1>
+                    <p id="header-cidade" contenteditable="true" data-placeholder="Sua cidade" class="icon">                      
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                        Asa Sul, DF
+                    </p>
+                    <p id="header-email" contenteditable="true" data-placeholder="Seu email" class="icon">
+                        <img width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" src="assets/images/Icons/email-envelope-letter-mail-message-svgrepo-com.svg" alt="">
+                       
+                        joao.silva@email.com
+                    </p>
+                    <div class="badges">
+                        <span class="badge editable-badge" contenteditable="true" data-placeholder="Badge 1">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"></polygon></svg>
+                            Cliente VIP
+                            <button class="remove-badge" onclick="removeBadge(this)">×</button>
+                        </span>                      
+                        <button class="add-badge-btn" onclick="addBadge()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"></path><path d="M12 5v14"></path></svg>
+                            Adicionar Badge
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="sidebar">
+                <h3 class="icon">
+                    <img width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" src="assets/images/Icons/statistics-graph-stats-analytics-business-data-svgrepo-com.svg" alt="">
+                    Estatísticas
+                </h3>
+                <div class="stats">
+                    <div class="stat-item">
+                        <div class="stat-number">47</div>
+                        <div class="stat-label">Pedidos Realizados</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">4.9</div>
+                        <div class="stat-label">Avaliação Média</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">15</div>
+                        <div class="stat-label">Receitas Favoritas</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3</div>
+                        <div class="stat-label">Anos Conosco</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="section">
+                    <h3 class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="m18.5 2.5 3 3L12 15l-4 1 1-4Z"></path></svg>
+                        Editar Perfil
+                    </h3>
+                    <div class="form-group">
+                        <label for="nome">Nome Completo</label>
+                        <input type="text" id="nome" value="João Silva">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" value="joao.silva@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" id="telefone" value="(61) 99856-8959">
+                    </div>
+                    <div class="form-group">
+                        <label for="endereco">Endereço</label>
+                        <input type="text" id="endereco" value="Rua das Flores, 110 - Asa Sul, DF">
+                    </div>
+                    <div class="form-group">
+                        <label for="bio">Sobre você</label>
+                        <textarea id="bio" rows="4" placeholder="Conte um pouco sobre você..."></textarea>
+                    </div>
+                    <div style="display: flex; gap: 15px;">
+                        <button class="btn">
+                            
+                            Salvar Alterações
+                        </button>
+                        <button class="btn btn-secondary">
+                            
+                            Cancelar
+                        </button>
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h3 class="icon">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                        Pedidos Recentes
+                    </h3>
+                    <div class="orders-list">
+                        <div class="order-item">
+                            <div class="order-header">
+                                <span class="order-number">#12345</span>
+                                <span class="order-status">Entregue</span>
+                            </div>
+                            <div class="order-details">
+                            
+                                Bolo de Chocolate • R$ 95,00 • 15/06/2025
+                            </div>
+                        </div>
+                        <div class="order-item">
+                            <div class="order-header">
+                                <span class="order-number">#12344</span>
+                                <span class="order-status">Em preparo</span>
+                            </div>
+                            <div class="order-details">         
+                                Kit 50 Cupcakes • R$ 156,00 • 20/06/2025
+                            </div>
+                        </div>
+                        <div class="order-item">
+                            <div class="order-header">
+                                <span class="order-number">#12343</span>
+                                <span class="order-status">Confirmado</span>
+                            </div>
+                            <div class="order-details">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="m19 11-1.5-1.5"></path><path d="m5 11 1.5-1.5"></path><path d="M12 15v6a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-1"></path><path d="M8 21h8"></path></svg>
+                                Brigadeiros • R$ 150,50 • 28/06/2025
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>     
+        // Animações e interatividade
+        document.addEventListener('DOMContentLoaded', function() {
+            // Efeito de hover nos itens
+            const statItems = document.querySelectorAll('.stat-item');
+            statItems.forEach(item => {
+                item.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateX(5px) scale(1.02)';
+                });
+                item.addEventListener('mouseleave', function() {
+                    this.style.transform = 'translateX(5px)';
+                });
+            });
+
+            // Efeito de clique nos botões
+            const buttons = document.querySelectorAll('.btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    this.style.transform = 'translateY(-2px) scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'translateY(-2px)';
+                    }, 100);
+                });
+            });
+
+            // Simulação de edição de avatar
+            function loadImage(event) {
+                const file = event.target.files[0];
+                const reader = new FileReader();
+                
+                reader.onload = function(e) {
+                    const avatarElement = document.getElementById('avatar');
+                    avatarElement.style.backgroundImage = `url(${e.target.result})`;
+                    avatarElement.style.backgroundSize = 'cover';
+                    avatarElement.style.backgroundPosition = 'center';
+                    avatarElement.innerHTML = ''; // Limpa o conteúdo SVG
+                }
+                
+                if (file) {
+                    reader.readAsDataURL(file);
+                }
+            }
+            //Avatar icons
+            const editAvatar = document.querySelector('.edit-avatar');
+            const avatarIcons = [
+                '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>',
+                '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="m22 2-2 2"></path><path d="m18 6 2-2"></path><path d="m22 10-2-2"></path><path d="m18 14 2-2"></path></svg>',
+                '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2a3 3 0 0 0-3 3v7a3 3 0 0 0 6 0V5a3 3 0 0 0-3-3Z"></path><path d="m19 11-1.5-1.5"></path><path d="m5 11 1.5-1.5"></path><path d="M12 15v6a1 1 0 0 0 1 1h2a1 1 0 0 0 1-1v-1"></path><path d="M8 21h8"></path></svg>',
+                '<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"></path><path d="M14 9h1.5a2.5 2.5 0 0 0 0-5H14"></path><path d="M6 2v6"></path><path d="M14 2v6"></path><path d="M6 16a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2a1 1 0 0 1-1 1H7a1 1 0 0 1-1-1Z"></path></svg>'
+            ];
+            
+            editAvatar.addEventListener('click', function() {
+                const avatarElement = document.querySelector('.avatar');
+                const currentIndex = avatarIcons.findIndex(icon => avatarElement.innerHTML === icon);
+                const nextIndex = (currentIndex + 1) % avatarIcons.length;
+                avatarElement.innerHTML = avatarIcons[nextIndex];
+            });
+            window.addBadge = function() {
+                const badgesContainer = document.querySelector('.badges');
+                const addBtn = document.querySelector('.add-badge-btn');
+                
+                const newBadge = document.createElement('span');
+                newBadge.className = 'badge editable-badge';
+                newBadge.contentEditable = 'true';
+                newBadge.setAttribute('data-placeholder', 'Nova badge');
+                newBadge.innerHTML = '✨ Nova Badge<button class="remove-badge" onclick="removeBadge(this)">×</button>';
+                
+                badgesContainer.insertBefore(newBadge, addBtn);
+                newBadge.focus();
+            };
+
+            // Função para remover badge
+            window.removeBadge = function(btn) {
+                btn.parentElement.remove();
+            };
+
+            // Adicionar botões de remoção aos badges existentes
+            const existingBadges = document.querySelectorAll('.editable-badge');
+            existingBadges.forEach(badge => {
+                if (!badge.querySelector('.remove-badge')) {
+                    const removeBtn = document.createElement('button');
+                    removeBtn.className = 'remove-badge';
+                    removeBtn.innerHTML = '×';
+                    removeBtn.onclick = function() { removeBadge(this); };
+                    badge.appendChild(removeBtn);
+                }
+            });
+
+            // Sincronizar informações do cabeçalho com os campos do formulário
+            const syncFields = [
+                { header: '#header-nome', form: '#nome' },
+                { header: '#header-email', form: '#email' }
+            ];
+
+            syncFields.forEach(field => {
+                const headerElement = document.querySelector(field.header);
+                const formElement = document.querySelector(field.form);
+                
+                if (headerElement && formElement) {
+                    headerElement.addEventListener('input', function() {
+                        let text = this.textContent.trim();
+                        // Remove emojis para o campo de email
+                        if (field.form === '#email') {
+                            text = text.replace(/📧\s*/, '');
+                        }
+                        formElement.value = text;
+                    });
+                    
+                    formElement.addEventListener('input', function() {
+                        if (field.form === '#email') {
+                            headerElement.textContent = '📧 ' + this.value;
+                        } else {
+                            headerElement.textContent = this.value;
+                        }
+                    });
+                }
+            });
+
+            // Melhorar a experiência de edição
+            const editableElements = document.querySelectorAll('[contenteditable="true"]');
+            editableElements.forEach(element => {
+                // Evitar quebras de linha em elementos inline
+                element.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter') {
+                        e.preventDefault();
+                        this.blur();
+                    }
+                });
+
+                // Salvar automaticamente ao perder o foco
+                element.addEventListener('blur', function() {
+                    // Aqui você pode adicionar lógica para salvar no backend
+                    console.log('Campo alterado:', this.id || this.className, '=', this.textContent);
+                });
+            });
+
+            // Validação de formulário
+            const form = document.querySelector('.section');
+            const inputs = form.querySelectorAll('input, textarea');
+            
+            inputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.borderColor = '#8C5660';
+                    this.style.boxShadow = '0 0 0 3px rgba(140, 86, 96, 0.1)';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.style.borderColor = '#D9B0B7';
+                    this.style.boxShadow = 'none';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

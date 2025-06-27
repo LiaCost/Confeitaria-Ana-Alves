@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notificações</title>
+
+    <link rel="stylesheet" href="assets/style/notificaçoes.css">
+     <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Logo/Logo-Black.png">
+
+</head>
+<body>
+     <button class="back-button" onclick="goBack()" title="Voltar à tela inicial">
+        <a href="index.html"><span class="back-arrow">←</span></a>       
+    </button>
+    <div class="container">
+        <div class="header">
+            <button class="mark-all-read" onclick="markAllAsRead()">Marcar todas como lidas</button>
+            <h1> Notificações</h1>
+            <p>Acompanhe todos os seus pedidos e novidades</p>
+        </div>
+
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number" id="totalCount">12</div>
+                <div class="stat-label">Total</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="unreadCount">5</div>
+                <div class="stat-label">Não lidas</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number" id="todayCount">3</div>
+                <div class="stat-label">Hoje</div>
+            </div>
+        </div>
+
+        <div class="notifications-container">
+            <div class="filter-tabs">
+                <button class="tab active" onclick="filterNotifications('all')">Todas</button>
+                <button class="tab" onclick="filterNotifications('unread')">Não lidas</button>
+                <button class="tab" onclick="filterNotifications('orders')">Pedidos</button>
+                <button class="tab" onclick="filterNotifications('promotions')">Promoções</button>
+            </div>
+
+            <div class="notifications-list" id="notificationsList">
+                <div class="notification unread" data-type="order" data-time="2025-06-26T10:30:00">
+                    <div class="notification-icon icon-order"></div>
+                    <div class="notification-content">
+                        <div class="notification-title">Novo Pedido Recebido</div>
+                        <div class="notification-message">Pedido #1247 - Bolo de Chocolate Gourmet para Maria Silva. Entrega agendada para amanhã às 15h.</div>
+                        <div class="notification-time">há 2 horas</div>
+                    </div>
+                </div>
+
+                <div class="notification unread" data-type="payment" data-time="2025-06-26T09:15:00">
+                    <div class="notification-icon icon-payment"></div>
+                    <div class="notification-content">
+                        <div class="notification-title">Pagamento Confirmado</div>
+                        <div class="notification-message">Pagamento de R$ 85,00 confirmado para o pedido #1246 - Torta de Morango Premium.</div>
+                        <div class="notification-time">há 3 horas</div>
+                    </div>
+                </div>
+
+                <div class="notification" data-type="delivery" data-time="2025-06-26T08:45:00">
+                    <div class="notification-icon icon-delivery"></div>
+                    <div class="notification-content">
+                        <div class="notification-title">Entrega Realizada</div>
+                        <div class="notification-message">Pedido #1245 entregue com sucesso para João Santos. Cupcakes de Baunilha com cobertura especial.</div>
+                        <div class="notification-time">há 4 horas</div>
+                    </div>
+                </div>
+
+                <div class="notification unread" data-type="promotion" data-time="2025-06-26T07:00:00">
+                    <div class="notification-icon icon-promotion"></div>
+                    <div class="notification-content">
+                        <div class="notification-title">Promoção Especial Ativa</div>
+                        <div class="notification-message">Promoção de fim de semana: 20% de desconto em todos os bolos de festa! Válida até domingo.</div>
+                        <div class="notification-time">há 5 horas</div>
+                    </div>
+                </div>
+
+                <div class="notification" data-type="order" data-time="2025-06-25T16:20:00">
+                    <div class="notification-icon icon-order"></div>
+                    <div class="notification-content">
+                        <div class="notification-title">Pedido em Preparação</div>
+                        <div class="notification-message">Pedido #1244 - Brigadeiros Gourmet Sortidos está sendo preparado. Previsão de conclusão: hoje às 18h.</div>
+                        <div class="notification-time">ontem às 16:20</div>
+                    </div>
+                </div>
+
+                <div class="notification unread" data-type="order" data-time="2025-06-25T14:10:00">
+                    <div class="notification-icon icon-order"></div>
+                    <div class="notification-content">
+                        <div class="notification-title">Avaliação Recebida</div>
+                        <div class="notification-message">Ana Costa avaliou seu pedido com 5 estrelas: "Bolo simplesmente perfeito! Superou todas as expectativas!"</div>
+                        <div class="notification-time">ontem às 14:10</div>
+                    </div>
+                </div>
+
+                <div class="notification" data-type="payment" data-time="2025-06-25T11:30:00">
+                    <div class="notification-icon icon-payment"></div>
+                    <div class="notification-content">
+                        <div class="notification-title">Pagamento Pendente</div>
+                        <div class="notification-message">Lembrete: Pagamento do pedido #1243 ainda pendente. Entre em contato com o cliente Carlos Mendes.</div>
+                        <div class="notification-time">ontem às 11:30</div>
+                    </div>
+                </div>
+
+                <div class="notification unread" data-type="promotion" data-time="2025-06-24T09:00:00">
+                    <div class="notification-icon icon-promotion"></div>
+                    <div class="notification-content">
+                        <div class="notification-title">Nova Receita Adicionada</div>
+                        <div class="notification-message">Cheesecake de Frutas Vermelhas foi adicionado ao cardápio! Já disponível para pedidos.</div>
+                        <div class="notification-time">2 dias atrás</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let notifications = [];
+        let currentFilter = 'all';
+
+        // Inicializar notificações
+        function initNotifications() {
+            const notificationElements = document.querySelectorAll('.notification');
+            notifications = Array.from(notificationElements).map((el, index) => ({
+                id: index,
+                element: el,
+                type: el.dataset.type,
+                time: el.dataset.time,
+                unread: el.classList.contains('unread')
+            }));
+            updateStats();
+        }
+
+        // Filtrar notificações
+        function filterNotifications(filter) {
+            currentFilter = filter;
+            
+            // Atualizar tabs ativos
+            document.querySelectorAll('.tab').forEach(tab => tab.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Filtrar e mostrar notificações
+            const container = document.getElementById('notificationsList');
+            const allNotifications = container.querySelectorAll('.notification');
+
+            allNotifications.forEach(notification => {
+                let show = true;
+
+                switch(filter) {
+                    case 'unread':
+                        show = notification.classList.contains('unread');
+                        break;
+                    case 'orders':
+                        show = notification.dataset.type === 'order';
+                        break;
+                    case 'promotions':
+                        show = notification.dataset.type === 'promotion';
+                        break;
+                    case 'all':
+                    default:
+                        show = true;
+                        break;
+                }
+
+                notification.style.display = show ? 'flex' : 'none';
+            });
+
+            // Mostrar estado vazio se necessário
+            const visibleNotifications = Array.from(allNotifications).filter(n => n.style.display !== 'none');
+            if (visibleNotifications.length === 0) {
+                showEmptyState(filter);
+            } else {
+                hideEmptyState();
+            }
+        }
+
+        // Mostrar estado vazio
+        function showEmptyState(filter) {
+            let message = 'Nenhuma notificação encontrada';
+            switch(filter) {
+                case 'unread':
+                    message = 'Todas as notificações foram lidas!';
+                    break;
+                case 'orders':
+                    message = 'Nenhum pedido para mostrar';
+                    break;
+                case 'promotions':
+                    message = 'Nenhuma promoção ativa';
+                    break;
+            }
+
+            const container = document.getElementById('notificationsList');
+            if (!container.querySelector('.empty-state')) {
+                const emptyDiv = document.createElement('div');
+                emptyDiv.className = 'empty-state';
+                emptyDiv.innerHTML = `                 
+                    <h3>${message}</h3>
+                `;
+                container.appendChild(emptyDiv);
+            }
+        }
+
+        // Esconder estado vazio
+        function hideEmptyState() {
+            const emptyState = document.querySelector('.empty-state');
+            if (emptyState) {
+                emptyState.remove();
+            }
+        }
+
+        // Marcar todas como lidas
+        function markAllAsRead() {
+            document.querySelectorAll('.notification.unread').forEach(notification => {
+                notification.classList.remove('unread');
+                notification.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    notification.style.transform = 'scale(1)';
+                }, 200);
+            });
+            
+            updateStats();
+            
+            // Feedback visual
+            const button = document.querySelector('.mark-all-read');
+            const originalText = button.textContent;
+            button.textContent = '✓ Marcadas!';
+            button.style.background = 'linear-gradient(135deg, #4CAF50, #45a049)';
+            
+            setTimeout(() => {
+                button.textContent = originalText;
+                button.style.background = 'linear-gradient(135deg, #261417 0%, #8C5660 50%, #664B44 100%)';
+            }, 2000);
+        }
+
+        // Atualizar estatísticas
+        function updateStats() {
+            const total = notifications.length;
+            const unread = document.querySelectorAll('.notification.unread').length;
+            const today = document.querySelectorAll('.notification[data-time*="2025-06-26"]').length;
+
+            document.getElementById('totalCount').textContent = total;
+            document.getElementById('unreadCount').textContent = unread;
+            document.getElementById('todayCount').textContent = today;
+        }
+
+        // Marcar notificação individual como lida
+        function markAsRead(notification) {
+            if (notification.classList.contains('unread')) {
+                notification.classList.remove('unread');
+                updateStats();
+            }
+        }
+
+        // Event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            initNotifications();
+
+            // Adicionar click listeners para notificações individuais
+            document.querySelectorAll('.notification').forEach(notification => {
+                notification.addEventListener('click', function() {
+                    markAsRead(this);
+                    
+                    // Efeito visual de clique
+                    this.style.transform = 'scale(0.98)';
+                    setTimeout(() => {
+                        this.style.transform = 'scale(1)';
+                    }, 150);
+                });
+            });
+        });
+
+        // Simular novas notificações (opcional)
+        function addNewNotification() {
+            const container = document.getElementById('notificationsList');
+            const newNotification = document.createElement('div');
+            newNotification.className = 'notification unread';
+            newNotification.dataset.type = 'order';
+            newNotification.dataset.time = new Date().toISOString();
+            
+            newNotification.innerHTML = `
+                <div class="notification-icon icon-order"></div>
+                <div class="notification-content">
+                    <div class="notification-title">Novo Pedido!</div>
+                    <div class="notification-message">Acabou de chegar um novo pedido especial!</div>
+                    <div class="notification-time">agora</div>
+                </div>
+            `;
+            
+            container.insertBefore(newNotification, container.firstChild);
+            
+            // Animação de entrada
+            newNotification.style.transform = 'translateX(-100%)';
+            setTimeout(() => {
+                newNotification.style.transform = 'translateX(0)';
+            }, 100);
+            
+            updateStats();
+        }
+    </script>
+</body>
+</html>

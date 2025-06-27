@@ -1,0 +1,461 @@
+
+      * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #312e2f;
+            overflow-x: hidden;
+        }
+
+         /* Hero Section */
+         .hero {
+            font-family: 'Georgia', serif;
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 0;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2; /* Garante que o conteúdo fique acima do overlay */
+            text-align: center;
+            color: white;
+            max-width: 600px;
+            padding: 0 20px;        
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero-content h1 {
+            font-size: 3rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+            letter-spacing: 2px;
+        }
+
+        .hero-content p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+            opacity: 0.95;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 15px 35px;
+            background: linear-gradient(135deg, #ff5252, #ef9d9d);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 107, 107, 0.4);
+            background: linear-gradient(45deg, #ff5252, #ff7979);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 2.8rem;
+            }
+            
+            .hero-content p {
+                font-size: 1.1rem;
+            }
+            
+            .cta-button {
+                padding: 12px 28px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-content h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero-content p {
+                font-size: 1rem;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #261417;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(45deg, #ef9d9d, #D9B0B7);
+        }
+
+        /* Bolos em Destaque */
+        .featured-cakes {
+            background: linear-gradient(135deg, #fabfbf, #ffffff);
+            padding: 3rem 0;
+        }
+
+        .cakes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .cake-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+
+        .cake-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        }
+
+        .cake-image {
+            height: 250px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cake-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        /* Overlay */
+        .cake-image::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(207, 175, 144, 0.3), rgba(217, 176, 183, 0.3));
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .cake-card:hover .cake-image::before {
+            opacity: 1;
+        }
+
+        /* Efeito de brilho no hover */
+        .cake-image::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255, 255, 255, 0.4),
+                transparent
+            );
+            transition: left 0.5s;
+        }
+
+        .cake-card:hover .cake-image::after {
+            left: 100%;
+        }
+
+        .cake-info {
+            padding: 1.5rem;
+        }
+
+        .cake-info h3 {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #261417;
+        }
+
+        .cake-info p {
+            color: #664B44;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+
+        .cake-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a52);
+            color: white;
+            text-decoration: none;
+            padding: 12px 24px;
+            border-radius: 25px;
+            font-weight: bold;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 2px 8px rgba(255, 107, 107, 0.3);
+        }
+
+        .cake-button:hover {
+            background: linear-gradient(135deg, #ee5a52, #dc4545);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(255, 107, 107, 0.4);
+        }
+
+        .cake-button:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 6px rgba(255, 107, 107, 0.3);
+        }
+
+        .cake-price {
+            font-size: 1.3rem;
+            font-weight: bold;
+            color: #8C5660;
+        }
+
+        @media (max-width: 768px) {
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cakes-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .cake-image {
+                height: 200px;
+            }
+        }
+        
+        /* Sobre Nós */
+        .about {
+            background: linear-gradient(135deg, #ffffff, #D9B0B7);
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            color: #312e2f;
+        }
+
+        .image-ana{
+            width: 400px;
+            height: 400px;
+        }
+        .about-image {
+            height: 400px;
+            background: linear-gradient(135deg, #CFAF90, #ef9d9d);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+            color: #261417;
+        }
+
+        /* Depoimentos */
+        .testimonials {
+            background: linear-gradient(135deg, #fabfbf, #ef9d9d);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+            position: relative;
+        }
+
+        /* Foto circular do cliente */
+        .client-photo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            object-position: center;
+            margin: 0 auto 1.5rem auto;
+            border: 4px solid #ef9d9d;
+            box-shadow: 0 4px 15px rgba(239, 157, 157, 0.3);
+            transition: all 0.3s ease;
+        }
+
+        .testimonial-card:hover .client-photo {
+            transform: scale(1.05);
+            box-shadow: 0 6px 20px rgba(239, 157, 157, 0.4);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: #312e2f;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .testimonial-author {
+            font-weight: bold;
+            color: #8C5660;
+            font-size: 1.1rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background: #261417;
+                flex-direction: column;
+                padding: 2rem;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+
+            .nav-links.active {
+                transform: translateX(0);
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+
+            .about-image {
+                height: 300px;
+            }
+
+            /* Ajustes para mobile nos depoimentos */
+            .client-photo {
+                width: 70px;
+                height: 70px;
+                margin-bottom: 1rem;
+            }
+
+            .testimonial-text {
+                font-size: 0.95rem;
+            }
+
+            .testimonial-author {
+                font-size: 1rem;
+            }
+        }
+
+/* Footer Start */
+ 
+
+/* Footer End */
+
+        

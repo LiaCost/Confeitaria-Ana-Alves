@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Logo/Logo-Black.png">
+
+    <link rel="stylesheet" href="assets/style/registro.css">
+
+   
+</head>
+<body>
+     <button class="back-button" onclick="goBack()" title="Voltar à tela inicial">
+        <a href="index.html"><span class="back-arrow">←</span></a>       
+    </button>
+
+    <div class="main-content">
+        <div class="register-container">
+            <div class="decorative-elements"></div>
+            
+            <div class="logo-container">
+               <div class="logo">
+                    <a href="index.html"> <img src="assets/images/Logo/Logo-Black.png" alt="Logo da Confeitaria"></a>                  
+                </div>        
+            </div>
+
+            <h1 class="register-title">Criar conta</h1>
+
+            <form id="registerForm">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Nome</label>
+                        <input type="text" id="firstName" name="firstName" required placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Sobrenome</label>
+                        <input type="text" id="lastName" name="lastName" required placeholder="Seu sobrenome">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com" >
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(11) 99999-9999" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required placeholder="Digite a senha...">
+                    <div id="passwordStrength" class="password-strength"></div>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirmar Senha</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required placeholder="Digite novamente...">
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="terms" name="terms" required>
+                    <label for="terms">
+                        Eu concordo com os <a href="#" target="_blank">Termos de Uso</a> 
+                        e <a href="#" target="_blank">Política de Privacidade</a>
+                    </label>
+                </div>
+
+                <div class="checkbox-group">
+                    <input type="checkbox" id="newsletter" name="newsletter">
+                    <label for="newsletter">
+                        Quero receber ofertas especiais e novidades por e-mail
+                    </label>
+                </div>
+
+                <button type="submit" class="register-btn" id="registerBtn">Criar Conta</button>
+            </form>
+            
+            <div class="login-section">
+                <p class="login-text">Já tem uma conta?</p>
+                <a href="login.html" class="login-link">Fazer Login</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="developers">Desenvolvido por Lia Costa e Sarah Gabriel</div>           
+            <div class="footer-divider"></div>
+            <div style="color: #bd858f; font-family: 'Times New Roman'" class="copyright">
+                © 2025 Confeitaria Ana Alves. Todos os direitos reservados.<br>               
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+        // Formatação do telefone
+        document.getElementById('phone').addEventListener('input', function(e) {
+            let value = e.target.value.replace(/\D/g, '');
+            if (value.length >= 11) {
+                value = value.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
+            } else if (value.length >= 7) {
+                value = value.replace(/(\d{2})(\d{4})(\d{0,4})/, '($1) $2-$3');
+            } else if (value.length >= 3) {
+                value = value.replace(/(\d{2})(\d{0,5})/, '($1) $2');
+            }
+            e.target.value = value;
+        });
+
+        // Verificação da força da senha
+        document.getElementById('password').addEventListener('input', function(e) {
+            const password = e.target.value;
+            const strengthDiv = document.getElementById('passwordStrength');
+            
+            if (password.length === 0) {
+                strengthDiv.textContent = '';
+                return;
+            }
+            
+            let strength = 0;
+            if (password.length >= 8) strength++;
+            if (/[A-Z]/.test(password)) strength++;
+            if (/[a-z]/.test(password)) strength++;
+            if (/[0-9]/.test(password)) strength++;
+            if (/[^A-Za-z0-9]/.test(password)) strength++;
+            
+            if (strength <= 2) {
+                strengthDiv.textContent = 'Senha fraca';
+                strengthDiv.className = 'password-strength strength-weak';
+            } else if (strength <= 3) {
+                strengthDiv.textContent = 'Senha média';
+                strengthDiv.className = 'password-strength strength-medium';
+            } else {
+                strengthDiv.textContent = 'Senha forte';
+                strengthDiv.className = 'password-strength strength-strong';
+            }
+        });
+
+        // Validação do formulário
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const password = document.getElementById('password').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const terms = document.getElementById('terms').checked;
+            
+            // Validações
+            if (!firstName || !lastName || !email || !phone || !password || !confirmPassword) {
+                alert('Por favor, preencha todos os campos obrigatórios.');
+                return;
+            }
+            
+            if (password !== confirmPassword) {
+                alert('As senhas não coincidem.');
+                return;
+            }
+            
+            if (password.length < 6) {
+                alert('A senha deve ter pelo menos 6 caracteres.');
+                return;
+            }
+            
+            if (!terms) {
+                alert('Você deve aceitar os Termos de Uso para continuar.');
+                return;
+            }
+            
+            // Animação de sucesso
+            const btn = document.getElementById('registerBtn');
+            btn.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+            btn.textContent = 'Criando conta...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                alert('Conta criada com sucesso! Bem-vindo à nossa confeitaria!');
+                btn.style.background = 'linear-gradient(135deg, #8C5660, #b46e7b)';
+                btn.textContent = 'Criar Conta';
+                btn.disabled = false;
+                
+                // Aqui você redirecionaria para a página de login ou dashboard
+                // window.location.href = 'login.html';
+            }, 2000);
+        });
+
+        // Funcionalidade para o link de login
+        document.querySelector('.login-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            alert('Redirecionando para a página de login...');
+            // Aqui você adicionaria: window.location.href = 'login.html';
+        });
+
+        // Partículas flutuantes
+        function createFloatingElement() {
+            const element = document.createElement('div');
+            element.style.position = 'fixed';
+            element.style.width = '4px';
+            element.style.height = '4px';
+            element.style.background = '#ef9d9d';
+            element.style.borderRadius = '50%';
+            element.style.pointerEvents = 'none';
+            element.style.left = Math.random() * window.innerWidth + 'px';
+            element.style.top = window.innerHeight + 'px';
+            element.style.opacity = '0.6';
+            
+            document.body.appendChild(element);
+            
+            const animation = element.animate([
+                { transform: 'translateY(0px)', opacity: 0.6 },
+                { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
+            ], {
+                duration: 8000 + Math.random() * 4000,
+                easing: 'ease-out'
+            });
+            
+            animation.onfinish = () => element.remove();
+        }
+
+        // Criar partículas periodicamente
+        setInterval(createFloatingElement, 3000);
+    </script>
+</body>
+</html>

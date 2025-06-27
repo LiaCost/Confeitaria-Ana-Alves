@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Esqueceu a Senha - Confeitaria</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Logo/Logo-Black.png">
+
+    <link rel="stylesheet" href="assets/style/recuperar-senha.css">
+</head>
+<body>
+    <button class="back-button" onclick="goBack()" title="Voltar à tela de login">
+        <a href="login.html"><span class="back-arrow">←</span></a>       
+    </button>
+    
+    <div class="main-content">
+        <div class="forgot-password-container">
+            <div class="decorative-elements"></div>
+            
+            <div class="logo-container">
+               <div class="logo">
+                    <a href="index.html"> <img src="assets/images/Logo/Logo-Black.png" alt="Logo da Confeitaria"></a>                  
+                </div>          
+            </div>
+
+            <h1 class="page-title">Esqueceu sua senha?</h1>
+            <p class="page-description">
+                Não se preocupe! Digite seu e-mail abaixo e enviaremos um link para redefinir sua senha.
+            </p>
+
+            <form id="forgotPasswordForm">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                </div>
+
+                <button type="submit" class="submit-btn">Enviar link de recuperação</button>
+            </form>
+
+            <div class="info-message">
+                <span class="icon">ℹ️</span>
+                <strong>Importante:</strong> Verifique sua caixa de entrada e a pasta de spam. O link de recuperação será válido por 24 horas.
+            </div>
+
+            <div class="success-message" id="successMessage">
+                <span class="icon">✅</span>
+                <strong>E-mail enviado com sucesso!</strong><br>
+                Verifique sua caixa de entrada para prosseguir com a recuperação da senha.
+            </div>
+            
+            <div class="back-to-login">
+                <p class="back-to-login-text">Lembrou da senha?</p>
+                <a href="login.html" class="login-link">Voltar ao login</a>
+            </div>
+        </div>
+    </div>
+
+   <footer class="footer">
+        <div class="footer-content">
+            <div class="developers">Desenvolvido por Lia Costa e Sarah Gabriel</div>           
+            <div class="footer-divider"></div>
+            <div style="color: #bd858f; font-family: 'Times New Roman'" class="copyright">
+                © 2025 Confeitaria Ana Alves. Todos os direitos reservados.<br>               
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('forgotPasswordForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            
+            if (email) {
+                // Animação de sucesso
+                const btn = document.querySelector('.submit-btn');
+                const successMessage = document.getElementById('successMessage');
+                
+                btn.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                btn.textContent = 'Enviando...';
+                btn.disabled = true;
+                
+                setTimeout(() => {
+                    successMessage.style.display = 'block';
+                    btn.style.background = 'linear-gradient(135deg, #8C5660, #b46e7b)';
+                    btn.textContent = 'Enviar link de recuperação';
+                    btn.disabled = false;
+                    
+                    // Scroll suave para a mensagem de sucesso
+                    successMessage.scrollIntoView({ 
+                        behavior: 'smooth', 
+                        block: 'nearest' 
+                    });
+                }, 2000);
+            }
+        });
+
+        // Adicionar funcionalidade para o link de voltar ao login
+        document.querySelector('.login-link').addEventListener('click', function(e) {
+            e.preventDefault();
+            // Aqui você adicionaria: window.location.href = 'login.html';
+            window.location.href = 'login.html';
+        });
+        
+        function createFloatingElement() {
+            const element = document.createElement('div');
+            element.style.position = 'fixed';
+            element.style.width = '4px';
+            element.style.height = '4px';
+            element.style.background = '#ef9d9d';
+            element.style.borderRadius = '50%';
+            element.style.pointerEvents = 'none';
+            element.style.left = Math.random() * window.innerWidth + 'px';
+            element.style.top = window.innerHeight + 'px';
+            element.style.opacity = '0.6';
+            
+            document.body.appendChild(element);
+            
+            const animation = element.animate([
+                { transform: 'translateY(0px)', opacity: 0.6 },
+                { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
+            ], {
+                duration: 8000 + Math.random() * 4000,
+                easing: 'ease-out'
+            });
+            
+            animation.onfinish = () => element.remove();
+        }
+
+        // Criar partículas periodicamente
+        setInterval(createFloatingElement, 3000);
+    </script>
+</body>
+</html>

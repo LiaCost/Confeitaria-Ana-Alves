@@ -1,0 +1,148 @@
+.footer {
+            background: #261417;
+            color: #fabfbf;
+            padding: 40px 0 20px 0;
+            font-family: 'Georgia', serif;
+        }
+
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .footer-content {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        /* Logo Section */
+        .footer-logo {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .logo-footer{
+            width: 150px;
+            height: 150px;
+        }
+    
+        /* Contact Section */
+        .footer-contact {
+            margin-bottom: 40px;
+        }
+
+        .footer-contact h3 {
+            display: none;
+        }
+
+        .contact-items {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            transition: all 0.3s ease;
+            margin-bottom: 0;
+            position: relative;
+        }
+
+        .contact-item::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: 4px;
+            left: 50%;
+            background: linear-gradient(90deg, #CFAF90, #ef9d9d, #D9B0B7);
+            transition: all 0.4s ease;
+            transform: translateX(-50%);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .contact-item:hover::after {
+            width: 100%;
+        }
+
+        .contact-item i {
+            font-size: 20px;
+            margin-right: 15px;
+            color: #ef9d9d;
+            width: 25px;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover i {
+            color: #CFAF90;
+            transform: scale(1.1);
+        }
+
+        .contact-item a {
+            color: #fabfbf;
+            text-decoration: none;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            color: #CFAF90;
+        }
+
+        /* Email Form Section */
+        .footer-form {
+            display: none;
+        }
+
+        /* Footer Bottom */
+        .footer-bottom {
+            border-top: 2px solid #8C5660;
+            padding-top: 20px;
+            text-align: center;
+        }
+
+        .footer-bottom p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .footer-bottom p:first-child {
+            color: #CFAF90;
+            font-weight: bold;
+        }
+
+        .footer-bottom p:last-child {
+            color: #D9B0B7;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-items {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .logo-placeholder {
+                width: 200px;
+                height: 200px;
+            }
+
+            .logo-placeholder i {
+                font-size: 50px;
+            }
+
+            .logo-placeholder span {
+                font-size: 20px;
+            }
+        }

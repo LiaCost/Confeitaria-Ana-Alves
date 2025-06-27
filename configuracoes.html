@@ -1,0 +1,586 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minhas Configurações</title>
+
+     <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Logo/Logo-Black.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style/configuracoes.css"> 
+</head>
+<body>
+     <button class="back-button" onclick="goBack()" title="Voltar à tela inicial">
+        <a href="index.html"><span class="back-arrow">←</span></a>       
+    </button>
+    <div class="container">
+        <div class="header">         
+            <h1>Minhas Configurações</h1>
+            <p>Personalize sua experiência conosco</p>
+        </div>
+
+        <div class="settings-content">
+            <div id="notification" class="notification">
+                Suas configurações foram salvas com sucesso!
+            </div>
+
+            <div class="settings-section">
+                <h2 class="section-title">
+                     Dados Pessoais
+                </h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="firstName">Nome</label>
+                        <input type="text" id="firstName" class="form-control" placeholder="Seu nome">
+                    </div>
+                    <div class="form-group">
+                        <label for="lastName">Sobrenome</label>
+                        <input type="text" id="lastName" class="form-control" placeholder="Seu sobrenome">
+                    </div>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="email">E-mail</label>
+                        <input type="email" id="email" class="form-control" placeholder="seu@email.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Telefone</label>
+                        <input type="tel" id="phone" class="form-control" placeholder="(11) 99999-9999">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="birthDate">Data de Nascimento</label>
+                    <input type="date" id="birthDate" class="form-control">
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2 class="section-title">
+                    Endereços de Entrega
+                </h2>
+                
+                <div id="addresses-container">
+                    <!-- Endereços serão renderizados aqui -->
+                </div>
+
+                <button class="btn btn-primary" onclick="showAddAddressModal()" style="margin-top: 15px;">+ Adicionar Novo Endereço</button>
+            </div>
+
+            <div class="settings-section">
+                <h2 class="section-title">
+                    Notificações
+                </h2>
+                
+                <div class="preference-card">
+                    <div class="preference-info">
+                        <h4>Promoções e Ofertas</h4>
+                        <p>Receba as melhores ofertas e novidades em primeira mão</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="preference-card">
+                    <div class="preference-info">
+                        <h4>Status do Pedido</h4>
+                        <p>Atualizações sobre preparação e entrega dos seus pedidos</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="preference-card">
+                    <div class="preference-info">
+                        <h4>Lembrete de Aniversário</h4>
+                        <p>Oferta especial no seu aniversário e datas comemorativas</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox" checked>
+                        <span class="slider"></span>
+                    </label>
+                </div>
+
+                <div class="preference-card">
+                    <div class="preference-info">
+                        <h4>Novos Produtos</h4>
+                        <p>Seja o primeiro a saber sobre nossos lançamentos</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2 class="section-title">
+                    Preferências Alimentares
+                </h2>
+                
+                <div class="form-group">
+                    <label>Restrições Alimentares</label>
+                    <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 10px;">
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 8px 12px; background: var(--accent1); border-radius: 20px;">
+                            <input type="checkbox"> Sem Glúten
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 8px 12px; background: var(--accent1); border-radius: 20px;">
+                            <input type="checkbox"> Sem Lactose
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 8px 12px; background: var(--accent1); border-radius: 20px;">
+                            <input type="checkbox"> Vegano
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 8px 12px; background: var(--accent1); border-radius: 20px;">
+                            <input type="checkbox"> Sem Açúcar
+                        </label>
+                        <label style="display: flex; align-items: center; gap: 8px; cursor: pointer; padding: 8px 12px; background: var(--accent1); border-radius: 20px;">
+                            <input type="checkbox"> Diabético
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="allergies">Alergias</label>
+                    <input type="text" id="allergies" class="form-control" placeholder="Ex: amendoim, castanha, chocolate...">
+                </div>
+            </div>
+
+            <div class="settings-section">
+                <h2 class="section-title">
+                    Meus Favoritos
+                </h2>
+                
+                <div id="favorites-container">
+                    <!-- Favoritos serão renderizados aqui -->
+                </div>
+
+                <button class="btn btn-primary" onclick="showAddFavoriteModal()" style="margin-top: 15px;">+ Adicionar aos Favoritos</button>
+            </div>
+
+            <div class="settings-section">
+                <h2 class="section-title">
+                    Preferências de Entrega
+                </h2>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="prefTime">Horário Preferido</label>
+                        <select id="prefTime" class="form-control">
+                            <option>Manhã (8h - 12h)</option>
+                            <option>Tarde (12h - 18h)</option>
+                            <option>Noite (18h - 22h)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="deliveryNotes">Instruções Especiais</label>
+                        <input type="text" id="deliveryNotes" class="form-control" placeholder="Ex: Portão azul, apartamento 101...">
+                    </div>
+                </div>
+
+                <div class="preference-card">
+                    <div class="preference-info">
+                        <h4>Entrega Sem Contato</h4>
+                        <p>Deixar o pedido na porta sem contato direto</p>
+                    </div>
+                    <label class="toggle-switch">
+                        <input type="checkbox">
+                        <span class="slider"></span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="actions">
+                <button class="btn btn-secondary" onclick="showResetConfirmModal()">Cancelar Alterações</button>
+                <button class="btn btn-primary" onclick="saveSettings()">Salvar Configurações</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Edição/Adição de Endereço -->
+    <div id="address-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title" id="address-modal-title">
+                    <span id="address-modal-icon">🏠</span>
+                    <span id="address-modal-text">Adicionar Endereço</span>
+                </h3>
+                <button class="modal-close" onclick="closeModal('address-modal')">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="form-group">
+                    <label for="address-name">Nome do Endereço</label>
+                    <input type="text" id="address-name" class="form-control" placeholder="Ex: Casa, Trabalho, Casa da Vovó...">
+                </div>
+                <div class="form-group">
+                    <label for="address-street">Endereço Completo</label>
+                    <input type="text" id="address-street" class="form-control" placeholder="Rua, número, complemento...">
+                </div>
+                <div class="form-group">
+                    <label for="address-city">Cidade/Estado</label>
+                    <input type="text" id="address-city" class="form-control" placeholder="São Paulo, SP">
+                </div>
+                <div class="form-group">
+                    <label for="address-cep">CEP</label>
+                    <input type="text" id="address-cep" class="form-control" placeholder="00000-000">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-cancel" onclick="closeModal('address-modal')">Cancelar</button>
+                <button class="btn btn-confirm" id="address-save-btn" onclick="saveAddress()">Salvar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Confirmação -->
+    <div id="confirm-modal" class="modal-overlay">
+        <div class="modal confirm-modal">
+            <div class="modal-header">
+                <h3 class="modal-title">Confirmação</h3>
+                <button class="modal-close" onclick="closeModal('confirm-modal')">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="confirm-icon" id="confirm-icon">⚠️</div>
+                <div class="confirm-message" id="confirm-message">
+                    Tem certeza que deseja continuar?
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-cancel" onclick="closeModal('confirm-modal')">Cancelar</button>
+                <button class="btn btn-danger" id="confirm-action-btn" onclick="executeConfirmAction()">Confirmar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de Adicionar Favorito -->
+    <div id="favorite-modal" class="modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h3 class="modal-title">
+                    Adicionar aos Favoritos
+                </h3>
+                <button class="modal-close" onclick="closeModal('favorite-modal')">&times;</button>
+            </div>
+            <div class="modal-content">
+                <div class="form-group">
+                    <label for="favorite-name">Nome do Produto</label>
+                    <input type="text" id="favorite-name" class="form-control" placeholder="Ex: Cupcake de Chocolate">
+                </div>
+                <div class="form-group">
+                    <label for="favorite-description">Descrição</label>
+                    <input type="text" id="favorite-description" class="form-control" placeholder="Ex: Com cobertura de brigadeiro">
+                </div>
+            </div>
+            <div class="modal-actions">
+                <button class="btn btn-cancel" onclick="closeModal('favorite-modal')">Cancelar</button>
+                <button class="btn btn-confirm" onclick="saveFavorite()">Adicionar</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Dados de exemplo para endereços
+        let addresses = [
+            { id: 1, name: 'Casa', address: 'Rua das Flores, 123 - Jardim Primavera', city: 'São Paulo, SP', cep: '01234-567', isDefault: true },
+            { id: 2, name: 'Trabalho', address: 'Av. Paulista, 1000 - Bela Vista', city: 'São Paulo, SP', cep: '01310-100', isDefault: false }
+        ];
+
+        // Dados de exemplo para favoritos
+        let favorites = [
+            { id: 1, name: 'Pudim', description: 'De leite condensado', icon: '🍮' },
+            { id: 2, name: 'Cupcake', description: 'Com cobertura de morango', icon: '🧁' },
+            { id: 3, name: 'Torta de Limão', description: 'Com merengue suíço', icon: '🥧' }
+        ];
+
+        let currentEditingAddressId = null;
+        let confirmAction = null;
+
+        function saveSettings() {
+            const notification = document.getElementById('notification');
+            notification.classList.add('show');
+            
+            // Scroll suave para o topo
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 4000);
+        }
+
+        // Funções para modais
+        function showModal(modalId) {
+            document.getElementById(modalId).classList.add('show');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('show');
+            // Limpar campos se for modal de endereço
+            if (modalId === 'address-modal') {
+                document.getElementById('address-name').value = '';
+                document.getElementById('address-street').value = '';
+                document.getElementById('address-city').value = '';
+                document.getElementById('address-cep').value = '';
+                currentEditingAddressId = null;
+            }
+            // Limpar campos se for modal de favorito
+            if (modalId === 'favorite-modal') {
+                document.getElementById('favorite-name').value = '';
+                document.getElementById('favorite-description').value = '';
+            }
+        }
+
+        // Funções para gerenciar endereços
+        function editAddress(addressId) {
+            const address = addresses.find(addr => addr.id === addressId);
+            if (address) {
+                const newName = prompt('Nome do endereço:', address.name);
+                const newAddress = prompt('Endereço:', address.address);
+                const newCity = prompt('Cidade/Estado:', address.city);
+                const newCep = prompt('CEP:', address.cep);
+                
+                if (newName && newAddress && newCity && newCep) {
+                    address.name = newName;
+                    address.address = newAddress;
+                    address.city = newCity;
+                    address.cep = newCep;
+                    renderAddresses();
+                    showNotification('Endereço atualizado com sucesso! ✏️');
+                }
+            }
+        }
+
+        function removeAddress(addressId) {
+            const address = addresses.find(addr => addr.id === addressId);
+            if (address && address.isDefault) {
+                alert('Você não pode remover o endereço principal. Defina outro endereço como principal primeiro.');
+                return;
+            }
+            
+            if (confirm('Tem certeza que deseja remover este endereço?')) {
+                addresses = addresses.filter(addr => addr.id !== addressId);
+                renderAddresses();
+                showNotification('Endereço removido com sucesso! 🗑️');
+            }
+        }
+
+        function setDefaultAddress(addressId) {
+            addresses.forEach(addr => addr.isDefault = false);
+            const address = addresses.find(addr => addr.id === addressId);
+            if (address) {
+                address.isDefault = true;
+                renderAddresses();
+                showNotification('Endereço principal alterado! ⭐');
+            }
+        }
+
+        function addNewAddress() {
+            const name = prompt('Nome do endereço (ex: Casa, Trabalho):');
+            const address = prompt('Endereço completo:');
+            const city = prompt('Cidade/Estado:');
+            const cep = prompt('CEP:');
+            
+            if (name && address && city && cep) {
+                const newId = Math.max(...addresses.map(addr => addr.id)) + 1;
+                addresses.push({
+                    id: newId,
+                    name: name,
+                    address: address,
+                    city: city,
+                    cep: cep,
+                    isDefault: false
+                });
+                renderAddresses();
+                showNotification('Novo endereço adicionado! 🏠');
+            }
+        }
+
+        function renderAddresses() {
+            const addressSection = document.querySelector('.settings-section:nth-child(3)');
+            const addressesHTML = addresses.map(addr => `
+                <div class="address-card ${addr.isDefault ? 'default' : ''}">
+                    ${addr.isDefault ? '<div class="badge">Principal</div>' : ''}
+                    <h4>${addr.name}</h4>
+                    <p>${addr.address}<br>${addr.city} - CEP: ${addr.cep}</p>
+                    <div class="address-actions">
+                        <button class="btn btn-secondary btn-small" onclick="editAddress(${addr.id})"> Editar</button>
+                        ${!addr.isDefault ? `<button class="btn btn-secondary btn-small" onclick="setDefaultAddress(${addr.id})"> Tornar Principal</button>` : ''}
+                        <button class="btn btn-secondary btn-small" onclick="removeAddress(${addr.id})">Remover</button>
+                    </div>
+                </div>
+            `).join('');
+            
+            addressSection.innerHTML = `
+                <h2 class="section-title"> Endereços de Entrega</h2>
+                ${addressesHTML}
+                <button class="btn btn-primary" onclick="addNewAddress()" style="margin-top: 15px;">+ Adicionar Novo Endereço</button>
+            `;
+        }
+
+        // Funções para gerenciar favoritos
+        function removeFavorite(favoriteId) {
+            if (confirm('Remover este item dos favoritos?')) {
+                favorites = favorites.filter(fav => fav.id !== favoriteId);
+                renderFavorites();
+                showNotification('Item removido dos favoritos! 💔');
+            }
+        }
+
+        function addToFavorites() {
+            const name = prompt('Nome do produto:');
+            const description = prompt('Descrição:');
+            const icons = ['🧁', '🍰', '🥧', '🍪', '🍩', '🎂', '🥮', '🧆'];
+            const icon = icons[Math.floor(Math.random() * icons.length)];
+            
+            if (name && description) {
+                const newId = Math.max(...favorites.map(fav => fav.id)) + 1;
+                favorites.push({
+                    id: newId,
+                    name: name,
+                    description: description,
+                    icon: icon
+                });
+                renderFavorites();
+                showNotification('Produto adicionado aos favoritos! ❤️');
+            }
+        }
+
+        function renderFavorites() {
+            const favoritesSection = document.querySelector('.settings-section:nth-child(6)');
+            const favoritesHTML = favorites.map(fav => `
+                <div class="favorite-item">
+                    <div class="favorite-placeholder">${fav.icon}</div>
+                    <div style="flex-grow: 1;">
+                        <h4>${fav.name}</h4>
+                        <p>${fav.description}</p>
+                    </div>
+                    <button class="btn btn-secondary btn-small" onclick="removeFavorite(${fav.id})" style="margin-left: 10px;">❌</button>
+                </div>
+            `).join('');
+            
+            favoritesSection.innerHTML = `
+                <h2 class="section-title"> Meus Favoritos</h2>
+                ${favoritesHTML}
+                <button class="btn btn-primary" onclick="addToFavorites()" style="margin-top: 15px;">+ Adicionar aos Favoritos</button>
+            `;
+        }
+
+        function showNotification(message) {
+            const notification = document.getElementById('notification');
+            notification.textContent = message;
+            notification.classList.add('show');
+            
+            setTimeout(() => {
+                notification.classList.remove('show');
+            }, 3000);
+        }
+
+        // Função para resetar configurações
+        function resetSettings() {
+            if (confirm('Tem certeza que deseja restaurar todas as configurações para os valores padrão? Esta ação não pode ser desfeita.')) {
+                // Reset dos campos de dados pessoais
+                document.getElementById('firstName').value = '';
+                document.getElementById('lastName').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('phone').value = '';
+                document.getElementById('birthDate').value = '';
+                document.getElementById('allergies').value = '';
+                document.getElementById('deliveryNotes').value = '';
+                
+                // Reset das preferências
+                document.getElementById('prefTime').selectedIndex = 1; // Tarde
+                
+                // Reset dos toggles
+                const toggles = document.querySelectorAll('.preference-card input[type="checkbox"]');
+                toggles.forEach((toggle, index) => {
+                    if (index < 3) { // Primeiras 3 notificações
+                        toggle.checked = true;
+                    } else {
+                        toggle.checked = false;
+                    }
+                });
+                
+                // Reset das restrições alimentares
+                document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                    if (checkbox.closest('.preference-card')) return; // Pular os toggles de notificação
+                    checkbox.checked = false;
+                    const label = checkbox.closest('label');
+                    if (label) {
+                        label.style.background = 'var(--accent1)';
+                        label.style.color = 'var(--darkest)';
+                    }
+                });
+                
+                // Reset endereços para padrão
+                addresses = [
+                    { id: 1, name: 'Casa', address: 'Rua das Flores, 123 - Jardim Primavera', city: 'São Paulo, SP', cep: '01234-567', isDefault: true },
+                    { id: 2, name: 'Trabalho', address: 'Av. Paulista, 1000 - Bela Vista', city: 'São Paulo, SP', cep: '01310-100', isDefault: false }
+                ];
+                
+                // Reset favoritos para padrão
+                favorites = [
+                    { id: 1, name: 'Cupcake de Chocolate', description: 'Com cobertura de brigadeiro', icon: '🧁' },
+                    { id: 2, name: 'Bolo Red Velvet', description: 'Fatia individual com cream cheese', icon: '🍰' },
+                    { id: 3, name: 'Torta de Limão', description: 'Com merengue suíço', icon: '🥧' }
+                ];
+                
+                renderAddresses();
+                renderFavorites();
+                showNotification('Configurações restauradas para os valores padrão! 🔄');
+            }
+        }
+
+        // Inicialização
+        document.addEventListener('DOMContentLoaded', function() {
+            // Renderizar endereços e favoritos
+            renderAddresses();
+            renderFavorites();
+            
+            // Adicionar event listener para o botão cancelar
+            document.querySelector('.btn-secondary').addEventListener('click', resetSettings);
+            
+            // Animações interativas
+            document.querySelectorAll('.preference-card').forEach(card => {
+                card.addEventListener('click', function(e) {
+                    if (e.target.tagName === 'INPUT') return;
+                    const toggle = this.querySelector('input[type="checkbox"]');
+                    toggle.checked = !toggle.checked;
+                });
+            });
+
+            document.querySelectorAll('.form-control').forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.style.transform = 'scale(1.02)';
+                });
+                
+                input.addEventListener('blur', function() {
+                    this.style.transform = 'scale(1)';
+                });
+            });
+
+            // Toggle para restrições alimentares
+            document.querySelectorAll('input[type="checkbox"]').forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    const label = this.closest('label');
+                    if (label && !this.closest('.preference-card') && !this.closest('.toggle-switch')) {
+                        if (this.checked) {
+                            label.style.background = 'var(--secondary)';
+                            label.style.color = 'var(--white)';
+                        } else {
+                            label.style.background = 'var(--accent1)';
+                            label.style.color = 'var(--darkest)';
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

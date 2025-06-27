@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Central de Ajuda </title>
+
+    <link rel="stylesheet" href="assets/style/ajuda.css">
+     <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Logo/Logo-Black.png">
+
+</head>
+<body>
+     <button class="back-button" onclick="goBack()" title="Voltar à tela inicial">
+        <a href="index.html"><span class="back-arrow">←</span></a>       
+    </button>
+    <div class="container">
+        <div class="header">
+            <h1>Central de Ajuda</h1>
+            <p>Estamos aqui para tornar sua experiência ainda mais doce!</p>
+        </div>
+
+        <div class="search-box">
+            <input type="text" class="search-input" placeholder="Digite sua dúvida aqui..." id="searchInput">
+        </div>
+
+        <div class="help-categories">
+            <div class="category-card">
+                <div class="category-icon">♦</div>
+                <h3>Pedidos & Compras</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Como faço um pedido?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Navegue pelo nosso catálogo online, escolha seus doces favoritos, adicione ao carrinho e finalize sua compra. Todo o processo é feito através do nosso site!
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Posso cancelar meu pedido?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sim! Você pode cancelar seu pedido até 2 horas após a confirmação através do nosso WhatsApp ou e-mail.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Qual o valor mínimo para entrega?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        O valor mínimo para entrega é de R$ 30,00. Abaixo desse valor, cobramos uma taxa adicional de R$ 5,00.
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">♠</div>
+                <h3>Entrega & Retirada</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Qual o prazo de entrega?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Entregas são realizadas em até 24 horas para pedidos comuns e até 48 horas para bolos personalizados.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Posso retirar na loja?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Claro! Você pode retirar seu pedido em nossa loja. Avisaremos quando estiver pronto para retirada.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Vocês entregam aos finais de semana?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sim! Realizamos entregas de sexta a domingo. Nossa equipe trabalha para garantir que você receba seus doces fresquinhos.
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">♥</div>
+                <h3>Produtos & Personalização</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Posso personalizar meu bolo?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Absolutamente! Oferecemos diversas opções de personalização: sabores, coberturas, decorações e mensagens especiais.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Vocês fazem doces sem açúcar?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sim! Temos uma linha especial de doces diet e sem açúcar. Consulte nossa seção de produtos especiais.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Qual a validade dos produtos?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Nossos doces são feitos frescos diariamente. Recomendamos consumir em até 3 dias, mantendo refrigerado.
+                    </div>
+                </div>
+            </div>
+
+            <div class="category-card">
+                <div class="category-icon">♣</div>
+                <h3>Pagamento & Financeiro</h3>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Quais formas de pagamento aceitas?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Aceitamos cartão de crédito, débito, PIX, dinheiro e vale-refeição. Pagamento online é seguro e protegido.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Posso parcelar minha compra?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Sim! Aceitamos parcelamento em até 3x sem juros no cartão de crédito para compras acima de R$ 50,00.
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        Como funciona o PIX?
+                        <span class="arrow">▼</span>
+                    </div>
+                    <div class="faq-answer">
+                        Após finalizar o pedido, você receberá um QR Code para pagamento via PIX. É instantâneo e seu pedido entra na produção imediatamente.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="contact-section">
+            <h3>Ainda precisa de ajuda?</h3>
+            <p style="color: #664B44; font-size: 1.2em; margin-bottom: 30px;">
+                Sempre pronta para te atender com muito carinho!
+            </p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <strong>WhatsApp</strong>
+                    <p>(61) 98565-3068</p>
+                </div>
+                <div class="contact-item">
+                    <strong>E-mail</strong>
+                    <p>confeitarianalves@gmail.com</p>
+                </div>
+                <div class="contact-item">
+                    <strong>Horário</strong>
+                    <p>Seg-Dom: 9h às 17h</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const arrow = element.querySelector('.arrow');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                if (item !== answer) {
+                    item.classList.remove('active');
+                }
+            });
+            
+            document.querySelectorAll('.arrow').forEach(arr => {
+                if (arr !== arrow) {
+                    arr.classList.remove('rotated');
+                }
+            });
+            
+            // Toggle current FAQ item
+            answer.classList.toggle('active');
+            arrow.classList.toggle('rotated');
+        }
+
+        // Search functionality
+        document.getElementById('searchInput').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                    if (searchTerm.length > 2) {
+                        item.style.background = '#ef9d9d';
+                        item.style.transform = 'scale(1.02)';
+                    } else {
+                        item.style.background = '#fabfbf';
+                        item.style.transform = 'scale(1)';
+                    }
+                } else {
+                    item.style.display = searchTerm ? 'none' : 'block';
+                    item.style.background = '#fabfbf';
+                    item.style.transform = 'scale(1)';
+                }
+            });
+        });
+
+        // Add smooth animations on page load
+        window.addEventListener('load', function() {
+            const cards = document.querySelectorAll('.category-card');
+            cards.forEach((card, index) => {
+                setTimeout(() => {
+                    card.style.opacity = '0';
+                    card.style.transform = 'translateY(30px)';
+                    card.style.transition = 'all 0.6s ease';
+                    
+                    setTimeout(() => {
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    }, 100);
+                }, index * 200);
+            });
+        });
+    </script>
+</body>
+</html>

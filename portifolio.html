@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nossos Doces - Portfólio</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Logo/Logo-Black.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style/portifolio.css">
+    <link rel="stylesheet" href="assets/style/menu.css">
+    <link rel="stylesheet" href="assets/style/footer.css">
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    
+</head>
+<body>
+     <!-- Header -->
+     <header>         
+        <nav>              
+            <!-- Logo -->                 
+            <a class="logo" href="index.html" style="display: flex; align-items: center; text-decoration: none; height: 50px;">                     
+                <!-- Aumentando a altura da logo para 80px -->                     
+                <img src="assets/images/Logo/Logo-Black.png" alt="Logo" style="height: 85px; margin-right: 10px;  object-fit: contain;">                 
+            </a>             
+            <!-- Logo End -->    
+             <div class="nav-center">
+                    <ul class="nav-links">                 
+                        <li><a href="index.html">Início</a></li>                 
+                        <li><a href="historia.html">História</a></li>                 
+                        <li><a href="cardapio.html">Cardápio</a></li>                   
+                        <li><a href="encomenda.html">Encomenda</a></li>                   
+                        <li><a href="portifolio.html">Portifólio</a></li>                                  
+                        <li><a href="contato.html">Contato</a></li>             
+                    </ul> 
+             </div>         
+            
+            
+                  <div class="user-section">
+                <div class="user-dropdown">
+                    <div class="user-button" onclick="toggleDropdown()">
+                        <div class="user-avatar">J</div>
+                        <span class="user-name">João Silva</span>
+                        <span class="user-dropdown-arrow">▼</span>
+                    </div>
+                    
+                    <div class="dropdown-menu" id="userDropdown">
+                        <a href="perfil-usuario.html" class="dropdown-item">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <span>Meu Perfil</span>
+                        </a>
+                        <a href="configuracoes.html" class="dropdown-item">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="3"/>
+                                <path d="m12 1 2.09 3.26L18 4.43l.35 3.86 3.26 2.09-.43 3.86L21 14.17l-3.86.35L15.09 18 12 17.57 8.91 18 7.86 14.65 4 14.17l-.18-3.86 3.26-2.09L7.43 4l3.86.43L12 1z"/>
+                            </svg>
+                            <span>Configurações</span>
+                        </a>
+                        <a href="notificacoes.html" class="dropdown-item">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24">
+                                <path d="M6 8a6 6 0 0 1 12 0c0 7 3 9 3 9H3s3-2 3-9"/>
+                                <path d="m13.73 21a2 2 0 0 1-3.46 0"/>
+                            </svg>
+                            <span>Notificações</span>
+                        </a>
+                        <div class="dropdown-divider"></div>
+                        <a href="ajuda.html" class="dropdown-item">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24">
+                                <circle cx="12" cy="12" r="10"/>
+                                <path d="m9 9 3-3 3 3"/>
+                                <path d="m9 15 3 3 3-3"/>
+                            </svg>
+                            <span>Ajuda</span>
+                        </a>
+                        <a href="index.html" class="dropdown-item" onclick="logout()">
+                            <svg class="dropdown-icon" viewBox="0 0 24 24">
+                                <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/>
+                                <polyline points="16,17 21,12 16,7"/>
+                                <line x1="21" y1="12" x2="9" y2="12"/>
+                            </svg>
+                            <span>Sair</span>
+                        </a>
+                    </div>
+                </div>
+            <button class="menu-toggle">☰</button>         
+        </nav>     
+    </header>
+
+    <div class="container">
+        <div class="header">
+            <h1>Doces artesanais</h1>
+            <p>Tudo feito com amor e carinho</p>
+        </div>
+        
+        <div class="portfolio-grid">
+            <!-- Card 1: Brownies -->
+            <div class="card">
+                <div class="carousel-container">
+                    <div class="carousel" data-carousel="0">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/brownie-01.jpg" alt="Bolo de Chocolate Decorado">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/brownie-02.jpg" alt="Bolo de Aniversário">
+                            </div>                          
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/brownie-11.jpg" alt="Bolo de Casamento">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/brownie-12.jpg" alt="Bolo de Casamento">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/brownie-13.jpg" alt="Bolo de Casamento">
+                            </div>                        
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/brownie-15.jpg" alt="Bolo de Casamento">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/brownie-16.jpg" alt="Bolo de Casamento">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/brownie-03.jpg" alt="Bolo de Casamento">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/brownie-04.jpg" alt="Bolo de Casamento">
+                            </div>          
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/brownie-10.jpg" alt="Bolo de Casamento">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveSlide(-1, 0)">‹</button>
+                        <button class="carousel-btn next" onclick="moveSlide(1, 0)">›</button>
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="1" data-total-slides="3"></span>
+                            <span class="indicator" data-slide="2" data-total-slides="3"></span>
+                            <span class="indicator" data-slide="3" data-total-slides="3"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="category-tag">Brownie</span>
+                    <h3>Brownies decorados</h3>
+                    <p class="card-description">Com os nossos brownies personalizados, cada mordida é uma celebração! Surpreenda seus convidados com sabores únicos.</p>                                
+                </div>
+            </div>
+
+            <!-- Card 2: Cupcakes Gourmet -->
+            <div class="card">
+                <div class="carousel-container">
+                    <div class="carousel" data-carousel="1">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/cupcake-01.jpg" alt="Cupcakes Coloridos">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/cupcake-02.jpg" alt="Cupcakes de Chocolate">
+                            </div>
+                             <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/cupcake-07.jpg" alt="Cupcakes Especiais">
+                            </div>                                                                    
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/cupcake-08.jpg" alt="Cupcakes Especiais">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveSlide(-1, 1)">‹</button>
+                        <button class="carousel-btn next" onclick="moveSlide(1, 1)">›</button>
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="1" data-total-slides="3"></span>
+                            <span class="indicator" data-slide="2" data-total-slides="3"></span>
+                            <span class="indicator" data-slide="3" data-total-slides="3"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="category-tag">Cupcakes</span>
+                    <h3>Cupcakes gourmet</h3>
+                    <p class="card-description">Cupcakes artesanais com cobertura cremosa e sabores irresistíveis. Perfeitos para festas e momentos especiais.</p>                 
+                </div>
+            </div>
+
+            <!-- Card 3: Bolos decorados -->
+            <div class="card">
+                <div class="carousel-container">
+                    <div class="carousel" data-carousel="2">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-63.jpg" alt="Torta de Frutas">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-04.jpg" alt="Torta de Chocolate">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-60.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-01.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-02.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-56.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-59.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-07.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-62.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-44.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-10.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-11.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-12.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-13.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-61.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-15.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-16.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-17.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-18.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-19.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-20.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-22.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-23.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-24.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-25.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-26.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-27.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-28.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-29.jpg" alt="Torta de Limão">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-30.jpg" alt="Torta de Limão">
+                            </div>
+                             <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-31.jpg" alt="Torta de Limão">
+                            </div>
+                             <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-32.jpg" alt="Torta de Limão">
+                            </div>
+                             <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-33.jpg" alt="Torta de Limão">
+                            </div>
+                             <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-34.jpg" alt="Torta de Limão">
+                            </div>
+                             <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-35.jpg" alt="Torta de Limão">
+                            </div>
+                             <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-36.jpg" alt="Torta de Limão">
+                            </div>
+                             <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-37.jpg" alt="Torta de Limão">
+                            </div>
+                             <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-38.jpg" alt="Torta de Limão">
+                            </div>
+                             <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-39.jpg" alt="Torta de Limão">
+                            </div>
+                             <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-40.jpg" alt="Torta de Limão">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveSlide(-1, 2)">‹</button>
+                        <button class="carousel-btn next" onclick="moveSlide(1, 2)">›</button>
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="1" data-total-slides="3"></span>
+                            <span class="indicator" data-slide="2" data-total-slides="3"></span>
+                            <span class="indicator" data-slide="3" data-total-slides="3"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="category-tag">Bolos</span>
+                    <h3>Bolos decorados</h3>
+                    <p class="card-description">Bolos personalizados para todas as ocasiões especiais. Sabores únicos e decoração artesanal que encata os e o paladar. </p>                   
+                </div>
+            </div>
+
+            <!-- Card 4: Docinhos Finos -->
+            <div class="card">
+                <div class="carousel-container">
+                    <div class="carousel" data-carousel="3">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/BB-01.jpg" alt="Docinhos Variados">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/beijinho-01.jpg" alt="Beijinhos">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/tarteletes-01.jpg" alt="Docinhos Variados">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/BB-02.jpg" alt="Beijinhos">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveSlide(-1, 3)">‹</button>
+                        <button class="carousel-btn next" onclick="moveSlide(1, 3)">›</button>
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="1"></span>
+                            <span class="indicator" data-slide="2"></span>
+                            <span class="indicator" data-slide="3"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="category-tag">Docinhos</span>
+                    <h3>Docinhos finos</h3>
+                    <p class="card-description">Brigadeiros gourmet, beijinhos, tarteletes de brownie e outras delícias feitas com ingredientes premium.</p>                 
+                </div>
+            </div>
+
+            <!-- Card 5: Sobremesas -->
+            <div class="card">
+                <div class="carousel-container">
+                    <div class="carousel" data-carousel="4">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/pudim-01.jpg" alt="Macarons Coloridos">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/sobremesa-01.jpg" alt="Macarons Sortidos">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/pudim-02.jpg" alt="Macarons Especiais">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/sobremesa-02.jpg" alt="Macarons Especiais">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/pudim-03.jpg" alt="Macarons Especiais">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveSlide(-1, 4)">‹</button>
+                        <button class="carousel-btn next" onclick="moveSlide(1, 4)">›</button>
+                        <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="1" data-total-slides="4"></span>
+                            <span class="indicator" data-slide="2" data-total-slides="4"></span>
+                            <span class="indicator" data-slide="3" data-total-slides="4"></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="category-tag">Sobremesas</span>
+                    <h3>Sobremesas especiais</h3>
+                    <p class="card-description">Pudins e sobremesas especiais, combinação ideal de texturas e sabores únicos para adoçar cada momento.</p>                  
+                </div>
+            </div>
+
+            <!-- Card 6: Bolos Artesanais -->
+            <div class="card">
+                <div class="carousel-container">
+                    <div class="carousel" data-carousel="5">
+                        <div class="carousel-track">
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-A01.jpg" alt="Cookies de Chocolate">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-A02.jpg" alt="Cookies Decorados">
+                            </div>
+                            <div class="carousel-slide">
+                                <img src="assets/images/Portifolio/bolo-A03.jpg" alt="Cookies Variados">
+                            </div>
+                        </div>
+                        <button class="carousel-btn prev" onclick="moveSlide(-1, 5)">‹</button>
+                        <button class="carousel-btn next" onclick="moveSlide(1, 5)">›</button>
+                       <div class="carousel-indicators">
+                            <span class="indicator active" data-slide="1" data-total-slides="5"></span>
+                            <span class="indicator" data-slide="2" data-total-slides="5"></span>
+                            <span class="indicator" data-slide="3" data-total-slides="5"></span>
+                      </div>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <span class="category-tag">Bolos</span>
+                    <h3>Bolos artesanais</h3>
+                    <p class="card-description">Bolos artesanais com uma massa fofinha e úmida, com recheios e coberturas que conquistam o paladar.</p>                   
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Logo Section -->
+                <div class="footer-logo">
+                    <a href="index.html"><img class="logo-footer" src="assets/images/Logo/Logo-Black.png" alt=""></a>                  
+                </div>
+
+                <!-- Contact Section -->
+                <div class="footer-contact">
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/556185653068" target="_blank" style="font-family: 'Times New Roman';">(61) 98565-3068</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/analvesconfeitaria/" target="_blank">@analvesconfeitaria</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contato@suaconfeitaria.com">contato@suaconfeitaria.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p style="font-family: 'Times New Roman';">Desenvolvido por Lia Costa e Sarah Gabriel</p>
+                <p style="font-family: 'Times New Roman';">&copy; 2025 Confeitaria Ana Alves. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+<!--Start Menu Script -->
+    <script>
+    // Controle do dropdown do usuário
+    function toggleDropdown() {
+        const dropdown = document.getElementById('userDropdown');
+        const arrow = document.querySelector('.user-dropdown-arrow');
+        
+        dropdown.classList.toggle('show');
+        arrow.style.transform = dropdown.classList.contains('show') ? 'rotate(180deg)' : 'rotate(0deg)';
+    }
+
+    // Fecha o dropdown quando clicar fora dele
+    document.addEventListener('click', function(event) {
+        const userDropdown = document.querySelector('.user-dropdown');
+        const dropdown = document.getElementById('userDropdown');
+        const arrow = document.querySelector('.user-dropdown-arrow');
+        
+        if (!userDropdown.contains(event.target)) {
+            dropdown.classList.remove('show');
+            arrow.style.transform = 'rotate(0deg)';
+        }
+    });
+
+    // Função de logout
+    function logout() {
+        if (confirm('Tem certeza que deseja sair?')) {
+            alert('Logout realizado com sucesso!');
+            // Redireciona para a página de login real
+            window.location.href = '/login';
+        }
+    }
+
+    // Menu mobile
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+        const navLinks = document.querySelector('.nav-links');
+        navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+    });
+
+    // Efeito de scroll no header
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.style.background = 'rgba(38, 20, 23, 0.98)';
+            header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.3)';
+        } else {
+            header.style.background = 'rgba(38, 20, 23, 0.95)';
+            header.style.boxShadow = 'none';
+        }
+    });
+
+    // Feedback visual e navegação real
+    document.querySelectorAll('.dropdown-item a').forEach(link => {
+        link.addEventListener('click', function(e) {
+            // Animação de clique
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = 'scale(1)';
+                // Continua a navegação após a animação
+                window.location.href = this.href;
+            }, 150);
+
+            // Interrompe a navegação imediata para esperar a animação
+            e.preventDefault();
+        });
+    });
+    </script>
+
+    <!-- Start Footer Script -->
+    <script>
+        function enviarEmail(event) {
+            event.preventDefault();
+            
+            // Simular envio de email
+            const btn = event.target.querySelector('.submit-btn');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Enviado!';
+                btn.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    btn.style.background = 'linear-gradient(135deg, #8C5660, #664B44)';
+                    event.target.reset();
+                }, 2000);
+            }, 1500);
+        }
+    </script>
+    <!-- End Footer Script -->
+
+    <script>
+        let currentSlides = [0, 0, 0, 0, 0, 0]; // Controla o slide atual de cada carrossel
+
+        function moveSlide(direction, carouselIndex) {
+            const carousel = document.querySelector(`[data-carousel="${carouselIndex}"]`);
+            const track = carousel.querySelector('.carousel-track');
+            const slides = carousel.querySelectorAll('.carousel-slide');
+            const indicators = carousel.querySelectorAll('.indicator');
+            
+            currentSlides[carouselIndex] += direction;
+            
+            if (currentSlides[carouselIndex] >= slides.length) {
+                currentSlides[carouselIndex] = 0;
+            }
+            if (currentSlides[carouselIndex] < 0) {
+                currentSlides[carouselIndex] = slides.length - 1;
+            }
+            
+            track.style.transform = `translateX(-${currentSlides[carouselIndex] * 100}%)`;
+            
+            // Atualiza indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlides[carouselIndex]);
+            });
+        }
+
+        function currentSlide(slideIndex, carouselIndex) {
+            const carousel = document.querySelector(`[data-carousel="${carouselIndex}"]`);
+            const track = carousel.querySelector('.carousel-track');
+            const indicators = carousel.querySelectorAll('.indicator');
+            
+            currentSlides[carouselIndex] = slideIndex - 1;
+            track.style.transform = `translateX(-${currentSlides[carouselIndex] * 100}%)`;
+            
+            // Atualiza indicadores
+            indicators.forEach((indicator, index) => {
+                indicator.classList.toggle('active', index === currentSlides[carouselIndex]);
+            });
+        }
+
+        // Auto-play dos carrosséis (opcional)
+        setInterval(() => {
+            for (let i = 0; i < currentSlides.length; i++) {
+                if (Math.random() > 0.7) { // 30% de chance de avançar cada carrossel
+                    moveSlide(1, i);
+                }
+            }
+        }, 4000);
+    </script>
+
+    <script>
+        // Adicione esta parte do código em um arquivo .js (por exemplo, script.js)
+            // e linke-o no seu HTML antes do fechamento da tag </body>
+
+            document.addEventListener('DOMContentLoaded', function() {
+                const indicators = document.querySelectorAll('.indicator');
+
+                indicators.forEach(indicator => {
+                    indicator.addEventListener('click', function() {
+                        const slideNumber = this.dataset.slide; // Pega o valor do atributo data-slide
+                        // Assumindo que currentSlide existe no seu código JS
+                        currentSlide(parseInt(slideNumber), 0); // Converte para número e chama a função
+                    });
+                });
+
+                // Certifique-se de que sua função currentSlide esteja definida em algum lugar
+                // Exemplo (adapte conforme a sua lógica real):
+                function currentSlide(n, m) {
+                    console.log(`Navegando para o slide: ${n}, com valor adicional: ${m}`);
+                    // Aqui vai a lógica para exibir o slide correspondente
+                    // Exemplo: remover 'active' de todos os indicadores e adicionar ao clicado
+                    indicators.forEach(ind => ind.classList.remove('active'));
+                    document.querySelector(`.indicator[data-slide="${n}"]`).classList.add('active');
+
+                    // Lógica para mostrar o slide visualmente
+                    // (Você precisaria ter os elementos dos slides em algum lugar no seu HTML)
+                }
+            });
+    </script>
+</body>
+</html>

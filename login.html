@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Confeitaria</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Logo/Logo-Black.png">
+
+    <link rel="stylesheet" href="assets/style/login.css">
+</head>
+<body>
+    <button class="back-button" onclick="goBack()" title="Voltar à tela inicial">
+        <a href="index.html"><span class="back-arrow">←</span></a>       
+    </button>
+    
+    <div class="main-content">
+        <div class="login-container">
+            <div class="decorative-elements"></div>
+            
+            <div class="logo-container">
+                <div class="logo">
+                    <a href="index.html"> <img src="assets/images/Logo/Logo-Black.png" alt="Logo da Confeitaria"></a>                  
+                </div>         
+            </div>
+
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required placeholder="seu@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Senha</label>
+                    <input type="password" id="password" name="password" required placeholder="Digite sua senha">
+                </div>
+
+                <button type="submit" class="login-btn">Entrar</button>
+            </form>
+
+            <a href="recuperar-senha.html" class="forgot-password">Esqueceu sua senha?</a>
+            
+            <div class="register-section">
+                <p class="register-text">Não tem uma conta?</p>
+                <a href="registro.html" class="register-link">Criar conta</a>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="developers">Desenvolvido por Lia Costa e Sarah Gabriel</div>           
+            <div class="footer-divider"></div>
+            <div style="color: #bd858f; font-family: 'Times New Roman'" class="copyright">
+                © 2025 Confeitaria Ana Alves. Todos os direitos reservados.<br>               
+            </div>
+        </div>
+    </footer>
+    
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                // Animação de sucesso
+                const btn = document.querySelector('.login-btn');
+                btn.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                btn.textContent = 'Entrando...';
+                
+                setTimeout(() => {
+                    alert('Login realizado com sucesso!');
+                    btn.style.background = 'linear-gradient(135deg, #8C5660, #664B44)';
+                    btn.textContent = 'Entrar';
+                }, 1500);
+            }
+        });
+
+        // Adicionar funcionalidade para os links
+        document.querySelector('.register-link').addEventListener('click', function(e) {
+            e.preventDefault();        
+            // Aqui você adicionaria: window.location.href = 'registro.html';
+            window.location.href = 'registro.html';
+        });
+
+        document.querySelector('.forgot-password').addEventListener('click', function(e) {
+            e.preventDefault();
+            window.location.href = 'recuperar-senha.html';
+            // Aqui você adicionaria: window.location.href = 'recuperar-senha.html';
+        });
+        
+        function createFloatingElement() {
+            const element = document.createElement('div');
+            element.style.position = 'fixed';
+            element.style.width = '4px';
+            element.style.height = '4px';
+            element.style.background = '#ef9d9d';
+            element.style.borderRadius = '50%';
+            element.style.pointerEvents = 'none';
+            element.style.left = Math.random() * window.innerWidth + 'px';
+            element.style.top = window.innerHeight + 'px';
+            element.style.opacity = '0.6';
+            
+            document.body.appendChild(element);
+            
+            const animation = element.animate([
+                { transform: 'translateY(0px)', opacity: 0.6 },
+                { transform: `translateY(-${window.innerHeight + 100}px)`, opacity: 0 }
+            ], {
+                duration: 8000 + Math.random() * 4000,
+                easing: 'ease-out'
+            });
+            
+            animation.onfinish = () => element.remove();
+        }
+
+        // Criar partículas periodicamente
+        setInterval(createFloatingElement, 3000);
+    </script>
+</body>
+</html>

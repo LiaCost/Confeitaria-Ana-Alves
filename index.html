@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confeitaria</title>
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="assets/images/Logo/Logo-Black.png">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="assets/style/index.css">
+    <link rel="stylesheet" href="assets/style/menu-home.css">
+    <link rel="stylesheet" href="assets/style/footer.css">
+
+
+    <!-- Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+             <!-- Logo -->
+                <a class="logo" href="index.html" style="display: flex; align-items: center; text-decoration: none; height: 50px;">
+                    <!-- Aumentando a altura da logo para 80px -->
+                    <img src="assets/images/Logo/Logo-Black.png" alt="Logo" style="height: 85px; margin-right: 10px;  object-fit: contain;">
+                </a>
+            <!-- Logo End -->
+            <ul class="nav-links">
+                <li><a href="index.html">Início</a></li>
+                <li><a href="historia.html">História</a></li>
+                <li><a href="cardapio.html">Cardápio</a></li>  
+                <li><a href="encomenda.html">Encomenda</a></li>  
+                <li><a href="portifolio.html">Portifólio</a></li>                 
+                <li><a href="contato.html">Contato</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="login.html" class="login-btn">
+                    <i class="fas fa-user"></i>
+                    Entrar
+                </a>
+                <button class="menu-toggle">☰</button>
+            </div>
+        </nav>
+    </header>
+
+   <!-- Hero Section -->
+    <section id="home" class="hero">
+        <img src="assets/images/Home/pexels-farook-feroz-274131126-12936056.jpg" alt="Doce Encanto - Confeitaria" class="hero-bg">
+        <div class="hero-overlay"></div>
+        <div class="hero-content" >
+            <h1 style="font-size: 45px;">Confeitaria Ana Alves</h1>
+            <p>Adoçando o seu momento especial.</p>
+            <a href="portifolio.html" class="cta-button">Conheça meus doces</a>
+        </div>
+    </section>
+
+    <!-- Bolos em Destaque -->
+   <section id="cakes" class="featured-cakes">
+        <div class="container">
+            <h2 class="section-title">Queridinhos</h2>
+            <div class="cakes-grid">
+                <div class="cake-card">
+                    <div class="cake-image">
+                        <img src="assets/images/Portifolio/brownie-07.jpg" alt="Bolo Red Velvet">
+                    </div>
+                    <div class="cake-info">
+                        <h3>Brownie</h3>
+                        <p>Irresistível com casquinha crocante, surpreenda seus convidados com sabores únicos</p>                       
+                        <a href="cardapio.html" class="cake-button">Saiba mais</a> 
+                    </div>
+                </div>
+                <div class="cake-card">
+                    <div class="cake-image">
+                        <img src="assets/images/Portifolio/bolo-A02.jpg" alt="Bolo de Chocolate">
+                    </div>
+                    <div class="cake-info">
+                        <h3>Bolo de Chocolate</h3>
+                        <p>Bolo artesanal com uma massa fofinha e úmida, com recheio e cobertura que conquistam o paladar.</p>
+                        <a href="cardapio.html" class="cake-button">Saiba mais</a> 
+                    </div>
+                </div>
+                <div class="cake-card">
+                    <div class="cake-image">
+                        <img src="assets/images/Portifolio/pudim-02.jpg" alt="Bolo de Cenoura">
+                    </div>
+                    <div class="cake-info">
+                        <h3>Pudim</h3>
+                        <p>Pudim cremoso e tradicional feito com leite condensado, com aquele sabor caseiro inesquecível.</p>
+                        <a href="cardapio.html" class="cake-button">Saiba mais</a>                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre mim</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Minha especialidade é criar momentos especiais através da confeitaria artesanal. Com mais de 4 anos de experiência, me dedico a produzir doces únicos e deliciosos, feitos com ingredientes selecionados e muito amor.</p>
+                    <br>
+                    <p>Cada doce é uma obra de arte comestível, cuidadosamente elaborada para tornar suas celebrações ainda mais especiais. Seja para aniversários, casamentos ou qualquer ocasião especial, estou aqui para adoçar seus momentos mais importantes.</p>
+                </div>
+                <div class="about-image"><img class="image-ana" src="assets/images/Portifolio/Ana.jpg" alt=""></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <h2 class="section-title">Depoimentos</h2>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <img src="assets/images/User/user.png" alt="Maria Silva" class="client-photo">
+                    <p class="testimonial-text">"O bolo de casamento foi simplesmente perfeito! Superou todas as nossas expectativas. Recomendo muito!"</p>
+                    <p class="testimonial-author"> Maria Silva</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="assets/images/User/user.png" alt="João Santos" class="client-photo">
+                    <p class="testimonial-text">"Qualidade excepcional e sabor incrível. O bolo de chocolate foi o sucesso da festa!"</p>
+                    <p class="testimonial-author">João Santos</p>
+                </div>
+                <div class="testimonial-card">
+                    <img src="assets/images/User/user.png" alt="Ana Costa" class="client-photo">
+                    <p class="testimonial-text">"Atendimento maravilhoso e bolos deliciosos. Já virei cliente fiel!"</p>
+                    <p class="testimonial-author">Ana Costa</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-content">
+                <!-- Logo Section -->
+                <div class="footer-logo">
+                    <a href="index.html"><img class="logo-footer" src="assets/images/Logo/Logo-Black.png" alt=""></a>                  
+                </div>
+
+                <!-- Contact Section -->
+                <div class="footer-contact">
+                    <div class="contact-items">
+                        <div class="contact-item">
+                            <i class="fab fa-whatsapp"></i>
+                            <a href="https://wa.me/556185653068" target="_blank" style="font-family: 'Times New Roman';">(61) 98565-3068</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fab fa-instagram"></i>
+                            <a href="https://www.instagram.com/analvesconfeitaria/" target="_blank">@analvesconfeitaria</a>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <a href="mailto:contato@suaconfeitaria.com">contato@suaconfeitaria.com</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Footer Bottom -->
+            <div class="footer-bottom">
+                <p style="font-family: 'Times New Roman';">Desenvolvido por Lia Costa e Sarah Gabriel</p>
+                <p style="font-family: 'Times New Roman';">&copy; 2025 Confeitaria Ana Alves. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!--  Start Footer Script-->
+    <script>
+        function enviarEmail(event) {
+            event.preventDefault();
+            
+            // Simular envio de email
+            const btn = event.target.querySelector('.submit-btn');
+            const originalText = btn.innerHTML;
+            
+            btn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Enviando...';
+            btn.disabled = true;
+            
+            setTimeout(() => {
+                btn.innerHTML = '<i class="fas fa-check"></i> Enviado!';
+                btn.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                
+                setTimeout(() => {
+                    btn.innerHTML = originalText;
+                    btn.disabled = false;
+                    btn.style.background = 'linear-gradient(135deg, #8C5660, #664B44)';
+                    event.target.reset();
+                }, 2000);
+            }, 1500);
+        }
+    </script>
+   <!-- End Footer Script -->
+    <script>
+        // Menu toggle para mobile
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navLinks = document.querySelector('.nav-links');
+        const navActions = document.querySelector('.nav-actions');
+
+        menuToggle.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            navActions.classList.toggle('active');
+        });
+
+        // Smooth scroll para links de navegação
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+                navLinks.classList.remove('active');
+                navActions.classList.remove('active');
+            });
+        });
+
+        // Header background on scroll
+        window.addEventListener('scroll', () => {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(38, 20, 23, 0.98)';
+            } else {
+                header.style.background = 'rgba(38, 20, 23, 0.95)';
+            }
+        });
+
+        // Animação de entrada dos elementos
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observar elementos para animação
+        document.querySelectorAll('.cake-card, .testimonial-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
