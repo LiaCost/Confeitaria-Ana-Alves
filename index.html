@@ -42,7 +42,7 @@
                     <i class="fas fa-user"></i>
                     Entrar
                 </a>
-                <button class="menu-toggle">☰</button>
+                <button class="menu-toggle" id="menuToggle">☰</button>
             </div>
         </nav>
     </header>
@@ -201,13 +201,18 @@
         // Menu toggle para mobile
         const menuToggle = document.querySelector('.menu-toggle');
         const navLinks = document.querySelector('.nav-links');
-        const navActions = document.querySelector('.nav-actions');
 
         menuToggle.addEventListener('click', () => {
             navLinks.classList.toggle('active');
-            navActions.classList.toggle('active');
         });
 
+        // Fechar o menu ao clicar em um item
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+            });
+        });
+        
         // Smooth scroll para links de navegação
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

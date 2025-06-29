@@ -429,13 +429,38 @@
                 font-size: 1.2rem;
             }
 
-            .about-content {
-                grid-template-columns: 1fr;
-            }
+              .about-content {
+                display: flex;
+                flex-direction: column-reverse;
+                align-items: center;
+                padding: 1rem;
+                gap: 2rem;
+                }
 
-            .about-image {
-                height: 300px;
-            }
+                .about-image {
+                    width: 100%;
+                    height: auto;
+                    max-width: 400px;
+                    background: linear-gradient(135deg, #CFAF90, #ef9d9d);
+                    border-radius: 20px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    margin: 0 auto;
+                }
+
+                .image-ana {
+                    width: 100%;
+                    max-width: 300px;
+                    height: auto;
+                    border-radius: 10px;
+                }
+
+                .about-text {
+                    text-align: center;
+                    padding: 0 1rem;
+                }
+
 
             /* Ajustes para mobile nos depoimentos */
             .client-photo {

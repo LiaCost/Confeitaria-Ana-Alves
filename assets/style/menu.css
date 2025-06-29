@@ -131,9 +131,18 @@
 
         /* Responsivo */
         @media (max-width: 768px) {
-            .nav-links {
+             .nav-links {
                 display: none;
-            }
+                flex-direction: column;
+                background: #261417;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                width: 200px;
+                padding: 1rem;
+                border-radius: 10px 0 0 10px;
+                z-index: 1001;
+            }         
             
             .menu-toggle {
                 display: block;
