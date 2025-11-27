@@ -56,7 +56,7 @@ Criar uma plataforma digital que:
 
 ---
 
-🛠️ Tecnologias Utilizadas
+🛠️ Tecnologias utilizadas
 
 💠 Frontend
 - **HTML5**: Estruturação semântica das páginas
@@ -78,7 +78,7 @@ Criar uma plataforma digital que:
 
 ---
 
-📁 Estrutura do Projeto
+📁 Estrutura do projeto
 
 ```
 CONFEITARIA-ANA-ALVES/
@@ -183,7 +183,7 @@ Index (Home)
 
 ---
 
-🎨 Paleta de Cores
+🎨 Paleta de cores
 
 ```css
 --primary: #8C5660      /* Rosê escuro */
@@ -271,7 +271,7 @@ Timeline interativa com 5 marcos principais:
 
 ---
 
-📞 Informações de Contato
+📞 Informações de contato
 
 - **WhatsApp**: (61) 98565-3068
 - **E-mail**: confeitarianalves@gmail.com
@@ -281,7 +281,7 @@ Timeline interativa com 5 marcos principais:
 
 ---
 
-🎓 Informações Acadêmicas
+🎓 Informações acadêmicas
 
 🟣 Desenvolvedoras
 - **Lia Costa**
@@ -293,7 +293,7 @@ Projeto desenvolvido como trabalho acadêmico para apresentar habilidades em:
 
 ---
 
-📈 Melhorias Futuras
+📈 Melhorias futuras
 
 - [ ] Backend com Node.js/Express
 - [ ] Banco de dados (MongoDB/PostgreSQL)
@@ -348,7 +348,7 @@ Este é um projeto acadêmico, mas sugestões e melhorias são bem-vindas!
 ### Portfólio
 *Galeria interativa com carrosséis de imagens dos produtos*
 
-### Sistema de Encomendas
+### Sistema de encomendas
 *Formulário completo para pedidos personalizados*
 
 ---
