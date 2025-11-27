@@ -128,7 +128,7 @@ CONFEITARIA-ANA-ALVES/
 
 ---
 
-🚀 Como Executar o Projeto
+🚀 Como executar o projeto
 
 ⚪ Pré-requisitos
 - Navegador web moderno (Chrome, Firefox, Edge, Safari)
