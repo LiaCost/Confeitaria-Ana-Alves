@@ -1,5 +1,3 @@
-🧁 Confeitaria Ana Alves
-
 <div align="center">
   <img src="assets/images/Logo/Logo-Black.png" alt="Logo Confeitaria Ana Alves" width="200"/>
   
