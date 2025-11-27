@@ -11,7 +11,7 @@
 </div>
 
 
-📋 Sobre o Projeto
+📋 Sobre o projeto
 
 Website desenvolvido como projeto acadêmico para a *Confeitaria Ana Alves*, uma confeitaria artesanal especializada em doces personalizados feitos com amor e ingredientes selecionados. O site oferece uma experiência completa para os clientes, desde a visualização do portfólio até o sistema de encomendas personalizadas.
 
