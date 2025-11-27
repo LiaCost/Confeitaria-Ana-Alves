@@ -160,9 +160,9 @@ cd confeitaria-ana-alves
 
 ---
 
-📱 Páginas e Navegação
+📱 Páginas e navegação
 
-Fluxo do Usuário
+Fluxo do usuário
 
 ```
 Index (Home)
@@ -232,7 +232,7 @@ O formulário de encomendas permite:
 Decoração tema aniversário infantil
 ```
 
-📸 Galeria de Portfólio
+📸 Galeria de portfólio
 
 - 6 categorias de produtos
 - Carrosséis independentes com múltiplas imagens
@@ -240,7 +240,7 @@ Decoração tema aniversário infantil
 - Auto-play opcional
 - Transições suaves
 
-📖 História da Confeitaria
+📖 História da confeitaria
 
 Timeline interativa com 5 marcos principais:
 1. **Dez 2020**: O recomeço dos sonhos
@@ -249,7 +249,7 @@ Timeline interativa com 5 marcos principais:
 4. **2023**: Consolidação da fé
 5. **2024**: Sonhos realizados
 
-⚙️ Sistema de Configurações
+⚙️ Sistema de configurações
 
 - Gerenciamento de dados pessoais
 - Múltiplos endereços de entrega
@@ -260,7 +260,7 @@ Timeline interativa com 5 marcos principais:
 
 ---
 
-🔒 Recursos de Segurança
+🔒 Recursos de segurança
 
 - Validação de formulários no cliente
 - Máscaras de input (telefone, CEP)
@@ -277,7 +277,7 @@ Timeline interativa com 5 marcos principais:
 - **E-mail**: confeitarianalves@gmail.com
 - **Instagram**: @analvesconfeitaria
 - **Horário**: Seg-Dom: 9h às 18h
-- **Localização**: Asa Sul, DF
+- **Localização**: Recanto das Emas, DF
 
 ---
 
@@ -310,7 +310,7 @@ Projeto desenvolvido como trabalho acadêmico para apresentar habilidades em:
 
 ---
 
-🐛 Problemas Conhecidos
+🐛 Problemas conhecidos
 
 > **Nota**: Como este é um projeto acadêmico frontend, algumas funcionalidades são simuladas:
 > - Login/Registro não persiste dados reais
