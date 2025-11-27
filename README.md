@@ -366,6 +366,4 @@ Este é um projeto acadêmico, mas sugestões e melhorias são bem-vindas!
   
   ### Feito com 💖 e muito 🍰
   
-  **[⬆ Voltar ao topo](#-confeitaria-ana-alves)**
-
 </div>
